@@ -14,6 +14,7 @@ class UsersController < ApplicationController
       flash[:notice] = "Welcome, #{@user.username}"
       redirect_to root_path
     else
+      flash[:notice] = "Invalid credentials"
       redirect to new_user_path
     end
   end
