@@ -18,7 +18,6 @@ RSpec.feature "User can log in and out of a session" do
     expect(current_path).to eq(root_path)
     
     click_on "Logout"
-    save_and_open_page
     expect(current_path).to eq(root_path)
     expect(page).to_not have_content(user.username)
    end
