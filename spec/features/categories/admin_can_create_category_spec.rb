@@ -9,7 +9,7 @@ RSpec.feature "Admin can create a category" do
   
   category = Category.last
 
-  expect(current_path).to eq(categories_path)
+  expect(current_path).to eq(category_path(category))
   expect(page).to have_content(category.name)
 
   end
