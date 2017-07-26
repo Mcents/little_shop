@@ -7,7 +7,7 @@ RSpec.feature "Admin can delete an existing product" do
     visit product_path(product)
     click_on "Delete"
 
-    expect(page).to_not have_content(product.titel)
+    expect(page).to_not have_content(product.name)
     expect(page).to_not have_content(product.description)
     expect(current_path).to eq(products_path)
   end
