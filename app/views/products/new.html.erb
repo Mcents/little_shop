@@ -10,6 +10,7 @@
 
   <%= f.label :category %>
   <%= f.collection_select  :category_id, Category.all, :id, :name %>
+  <%= f.label :category %>
 
   <%= f.submit "Create Product" %>
 <% end %>
