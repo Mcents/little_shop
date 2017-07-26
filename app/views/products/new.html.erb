@@ -8,7 +8,8 @@
   <%= f.label :price %>
   <%= f.text_field :price %>
 
-  <%= f.collection_select :category_id, Category.all, :id, :name %>
+  <%= f.label :category %>
+  <%= f.collection_select  :category_id, Category.all, :id, :name %>
 
   <%= f.submit "Create Product" %>
 <% end %>
