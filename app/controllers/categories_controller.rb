@@ -9,7 +9,7 @@ class CategoriesController < ApplicationController
     if @category.save
       flash[:notice] = "#{@category.name} added!"  
    
-      redirect_to category_path(@category)
+      redirect_to "/#{@category.name}" 
     else
       render :new
     end
