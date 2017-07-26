@@ -6,7 +6,7 @@
 ## Functionality
 ### Users can keep track of their shopping cart as well as rate products and write reviews.
 
-### Collaborators
+## Collaborators
 
 * Ashish Vaid
 * JF Lalonde
