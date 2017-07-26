@@ -15,6 +15,7 @@ Michael Centrelli
 
 
 
-https://github.com/Mcents/little_shop/files/1174979/gearupp_siteflow_2.pdf
+![gearupp_siteflow_2](https://user-images.githubusercontent.com/26772297/28602865-b9eecab4-717d-11e7-985b-c0c24e0f5d58.jpg)
+
 
 
