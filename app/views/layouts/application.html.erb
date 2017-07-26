@@ -10,7 +10,7 @@
 
   <body>
     <% if current_user %>
-      <%= current_user.username %>
+      <%= current_user.username %>'s GearUpp
       <%= link_to "Logout", logout_path, method: :delete %>
     <% end %>
     <%= yield %>
