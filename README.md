@@ -1,24 +1,21 @@
-# README
+# GearUpp Readme
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## The App
+### GearUpp is a shop that sells home electronics.
 
-Things you may want to cover:
+## Functionality
+### Users can keep track of their shopping cart as well as rate products and write reviews.
 
-* Ruby version
+## Collaborators
 
-* System dependencies
+* Ashish Vaid
+* JF Lalonde
+* Marc Fidelman
+* Michael Centrelli
 
-* Configuration
+## Site Flow Diagram
 
-* Database creation
+![gearupp_siteflow_2](https://user-images.githubusercontent.com/26772297/28602865-b9eecab4-717d-11e7-985b-c0c24e0f5d58.jpg)
 
-* Database initialization
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
