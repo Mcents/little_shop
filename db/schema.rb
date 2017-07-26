@@ -21,12 +21,6 @@ ActiveRecord::Schema.define(version: 20170726152526) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "catgeories", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.string "description"
