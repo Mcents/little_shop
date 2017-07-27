@@ -4,6 +4,8 @@
   Description: <%= product.description %>
   Price: <%= product.price %>
   Item Total: <%= count %>
+
+ <%= button_to "Remove Product", shopping_carts_path(product_id: product.id), class: "btn btn-success" %>
 <% end %>
 </br>
 Cart Total: <%= @shopping_cart.total_price %>
