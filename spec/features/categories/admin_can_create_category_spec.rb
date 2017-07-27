@@ -5,20 +5,12 @@ RSpec.feature "Admin can create a category" do
 
 
   visit new_category_path
-  fill_in "category[name]", with: "Computer Processing Unit"
+  fill_in "category[name]", with: "cpuunit"
   click_on "Create Category"
 
   category = Category.last
 
-  expect(current_path).to eq(categories_path)
-
-  visit new_category_path
-  fill_in "category[name]", with: "cpu"
-  click_on "Create Category"
-  
-  category = Category.last
-
-  expect(page).to have_content(category.name)
+  expect(current_path).to eq('/cpuunit')
 
   end
 end
