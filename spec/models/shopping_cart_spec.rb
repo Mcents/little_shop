@@ -8,4 +8,5 @@ RSpec.describe ShoppingCart, type: :model do
       expect(subject.total_count).to eq(5)
     end
   end
+  
 end
