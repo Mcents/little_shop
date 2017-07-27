@@ -1,0 +1,9 @@
+
+Edit <%= @brand.name %> 
+
+<%= form_for(:brand, url: brands_path) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, :value => "#{@brand.name}" %>
+
+  <%= f.submit "Submit" %>
+<% end %>

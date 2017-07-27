@@ -1,6 +1,7 @@
  Rails.application.routes.draw do
   root to: "users#index"
   resources :users
+  resources :brands 
   resources :products
   resources :categories, only: [:create, :new]
   get "/login", to: "sessions#new"
@@ -8,4 +9,3 @@
   delete "/logout", to: "sessions#destroy"
   get '/:category_name', to: 'categories#show'
 end
- 

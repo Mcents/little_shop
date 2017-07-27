@@ -4,12 +4,12 @@ class CategoriesController < ApplicationController
 
   end
 
-  def create 
+  def create
     @category = Category.new(category_params)
     if @category.save
-      flash[:notice] = "#{@category.name} added!"  
-   
-      redirect_to "/#{@category.name}" 
+      flash[:notice] = "#{@category.name} added!"
+
+      redirect_to "/#{@category.name}"
     else
       render :new
     end
@@ -17,7 +17,12 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find_by(name: params[:category_name])
-    @product = @category.products
+    if @category
+      @product = @category.products
+    else
+      render :404
+      #refactor protect category "wildcard" route  get navbar to show on 404
+    end
   end
 
   private
@@ -27,4 +32,3 @@ class CategoriesController < ApplicationController
   end
 
 end
-

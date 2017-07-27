@@ -1,0 +1,10 @@
+
+<%= @brand.name %></br>
+
+
+<% @brand_products.each do |p|%>
+<%= p.name %>
+<%= p.description %>
+<%= p.price %></br>
+
+<% end %>
