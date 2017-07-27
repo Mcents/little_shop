@@ -25,7 +25,6 @@ class BrandsController < ApplicationController
   end
 
   def create
-    byebug
     @brand = Brand.new(brand_params)
     if @brand.save
       flash[:notice] = "#{@brand.name} added!"
