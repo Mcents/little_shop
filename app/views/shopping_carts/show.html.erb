@@ -1,0 +1,9 @@
+<% @shopping_cart.show_products.each do |product, count| %>
+  <span class="thumbnail-custom"><%= image_tag(product.image_path)%></span>
+  Name: <%= product.name %>
+  Description: <%= product.description %>
+  Price: <%= product.price %>
+  Item Total: <%= count %>
+<% end %>
+</br>
+Cart Total: <%= @shopping_cart.total_price %>
