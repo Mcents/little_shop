@@ -2,6 +2,7 @@
 Rails.application.routes.draw do
   root to: "dashboards#index"
   resources :users
+  resources :brands 
   resources :products
   resources :categories
   resources :shopping_carts
@@ -17,4 +18,3 @@ Rails.application.routes.draw do
   get '/:category_name', to: 'categories#show'
 
 end
- 
