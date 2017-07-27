@@ -30,4 +30,8 @@ class ShoppingCart
       price
     end
   end
+
+  def remove_product(id)
+    contents[id.to_s].remove
+  end
 end
