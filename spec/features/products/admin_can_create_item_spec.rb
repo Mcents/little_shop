@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature "Admin can create products" do
   scenario "with valid attributes" do
 
-    category = Category.create!(name: "laptops")   
+    category = Category.create!(name: "laptops")
     category = Category.create!(name: "monitors")
     brand = Brand.create!(name: "samsung")
 
@@ -17,7 +17,7 @@ RSpec.feature "Admin can create products" do
     check("monitors")
 
     click_on "Create Product"
-   save_and_open_page 
+
     product = Product.last
 
     expect(current_path).to eq(products_path)
