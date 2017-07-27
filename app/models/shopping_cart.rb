@@ -17,10 +17,17 @@ class ShoppingCart
     contents[id.to_s].to_i
   end
 
-  def show_product(id)
-    product = Product.find(id)
-    product.name
-    product.description
-    product.price
+  def show_products
+    contents.reduce({}) do |final, (product_id, count)|
+      final[Product.find(product_id.to_i)] = count
+      final
+    end
+  end
+
+  def total_price
+    contents.reduce(0) do |price, (product_id, count)|
+      price += (Product.find(product_id.to_i).price * count)
+      price
+    end
   end
 end
