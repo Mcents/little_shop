@@ -10,4 +10,8 @@ class ShoppingCartsController < ApplicationController
     flash[:notice] = "#{pluralize(@shopping_cart.count_of(product.id), product.name)} in Cart"
     redirect_to products_path
   end
+
+  def show
+    @products = Product.all
+  end
 end

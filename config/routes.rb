@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "users#index"
+  root to: "dashboards#index"
   resources :users
   resources :products
   resources :categories
@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
   get "/cart", to: "shopping_carts#show"
+
 end

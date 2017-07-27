@@ -16,4 +16,11 @@ class ShoppingCart
   def count_of(id)
     contents[id.to_s].to_i
   end
+
+  def show_product(id)
+    product = Product.find(id)
+    product.name
+    product.description
+    product.price
+  end
 end

@@ -70,7 +70,7 @@
                 <a class="cart-button">
                     <svg class="cart-svg " width="16 " height="16 " viewBox="0 0 16 16 ">
                         <path d="M15.32 2.405H4.887C3 2.405 2.46.805 2.46.805L2.257.21C2.208.085 2.083 0 1.946 0H.336C.1 0-.064.24.024.46l.644 1.945L3.11 9.767c.047.137.175.23.32.23h8.418l-.493 1.958H3.768l.002.003c-.017 0-.033-.003-.05-.003-1.06 0-1.92.86-1.92 1.92s.86 1.92 1.92 1.92c.99 0 1.805-.75 1.91-1.712l5.55.076c.12.922.91 1.636 1.867 1.636 1.04 0 1.885-.844 1.885-1.885 0-.866-.584-1.593-1.38-1.814l2.423-8.832c.12-.433-.206-.86-.655-.86 " fill="#fff "></path>
-                    </svg> Your Cart
+                    </svg><%= link_to "Your Cart", cart_path, class: "btn"%>
                     <span class="item-number"><%= @shopping_cart.total_count %></span>
                 </a>
             </div>
@@ -98,132 +98,7 @@
     <% end %>
 
     <%= yield %>
-    <div class="container">
-        <div class="row">
-    		<div class="col-md-12">
-                    <div id="Carousel" class="carousel slide">
 
-                    <ol class="carousel-indicators">
-                        <li data-target="#Carousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#Carousel" data-slide-to="1"></li>
-                        <li data-target="#Carousel" data-slide-to="2"></li>
-                    </ol>
-
-                    <!-- Carousel items -->
-                    <div class="carousel-inner">
-
-                    <div class="item active">
-                    	<div class="row">
-                    	  <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
-                    	  <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
-                    	  <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
-                    	  <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
-                    	</div><!--.row-->
-                    </div><!--.item-->
-
-                    <div class="item">
-                    	<div class="row">
-                    		<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
-                    		<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
-                    		<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
-                    		<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
-                    	</div><!--.row-->
-                    </div><!--.item-->
-
-                    <div class="item">
-                    	<div class="row">
-                    		<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
-                    		<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
-                    		<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
-                    		<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
-                    	</div><!--.row-->
-                    </div><!--.item-->
-
-                    </div><!--.carousel-inner-->
-                      <a data-slide="prev" href="#Carousel" class="left carousel-control">‹</a>
-                      <a data-slide="next" href="#Carousel" class="right carousel-control">›</a>
-                    </div><!--.Carousel-->
-
-    		</div>
-    	</div>
-    </div><!--.container-->
-
-
-    <!-- <footer>
-      <div id = "footer" >
-        <div class="row">
-        <div class="col-md-12">
-        <div class="col-md-2">
-        <ul class="unstyled">
-            <li>GitHub<li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Contact & support</a></li>
-            <li><a href="#">Site status</a></li>
-        </ul>
-        </div>
-        <div class="col-md-2">
-        <ul class="unstyled">
-          <li>About Us<li>
-          <li><a href="#">Product for Mac</a></li>
-          <li><a href="#">Product for Windows</a></li>
-          <li><a href="#">Product for Eclipse</a></li>
-          <li><a href="#">Product mobile apps</a></li>
-        </ul>
-      </div>
-      <div class="col-md-2">
-        <ul class="unstyled">
-          <li>Support<li>
-          <li><a href="#">Web analytics</a></li>
-          <li><a href="#">Presentations</a></li>
-          <li><a href="#">Code snippets</a></li>
-          <li><a href="#">Job board</a></li>
-        </ul>
-      </div>
-      <div class="col-md-2">
-        <ul class="unstyled">
-          <li>Documentation<li>
-          <li><a href="#">Product Help</a></li>
-          <li><a href="#">Developer API</a></li>
-          <li><a href="#">Product Markdown</a></li>
-          <li><a href="#">Product Pages</a></li>
-        </ul>
-      </div>
-      <div class="col-md-2">
-        <ul class="unstyled">
-          <li>Services<li>
-          <li><a href="#">Help</a></li>
-          <li><a href="#">Software</a></li>
-          <li><a href="#">Product</a></li>
-          <li><a href="#">Pages</a></li>
-        </ul>
-      </div>
-      <div class="col-md-2">
-        <ul class="unstyled">
-          <li>More<li>
-          <li><a href="#">Training</a></li>
-          <li><a href="#">Students & teachers</a></li>
-          <li><a href="#">The Shop</a></li>
-          <li><a href="#">Plans & pricing</a></li>
-          <li><a href="#">Contact us</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <hr>
-  <div class="row">
-    <div class="col-md-12">
-      <div class="col-md-8">
-        <a href="#">Terms of Service</a>
-        <a href="#">Privacy</a>
-        <a href="#">Security</a>
-      </div>
-      <div class="span4">
-        <p class="muted pull-right">© 2017 GearUpp. All rights reserved</p>
-      </div>
-    </div>
-  </div>
-  </div>
-    </footer> -->
 
     <div class="container">
 
