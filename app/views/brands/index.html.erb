@@ -1,0 +1,6 @@
+
+<h1>Our Brands </h1>
+
+<%= @brands.each do |brand| %>
+<%= link_to "#{brand.name}", brand_path(brand) %>
+<% end %>

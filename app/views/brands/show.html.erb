@@ -1,6 +1,7 @@
 
 <%= @brand.name %></br>
-
+<%= button_to "Edit", edit_brand_path(@brand) %>
+<%= button_to "Delete", brand_path(@brand), method: :delete %>
 
 <% @brand_products.each do |p|%>
 <%= p.name %>

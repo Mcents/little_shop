@@ -1,5 +1,9 @@
 class BrandsController < ApplicationController
 
+  def index
+    @brands = Brand.all
+  end
+
   def new
 
   end
@@ -34,7 +38,12 @@ class BrandsController < ApplicationController
     end
   end
 
-
+  def destroy
+    @brand = Brand.find(params[:id])
+    @brand.destroy
+    flash[:notice] = "#{@brand.name} successfully deleted."
+    redirect_to brands_path
+  end
 
   private
 
