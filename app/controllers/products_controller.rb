@@ -18,7 +18,6 @@ end
 
 def index
   @products = Product.all
-  @shopping_cart = ShoppingCart.new(session[:shopping_cart])
 end
 
 def destroy
