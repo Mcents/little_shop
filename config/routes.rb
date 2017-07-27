@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+ Rails.application.routes.draw do
   root to: "users#index"
   resources :users
   resources :products
@@ -8,3 +8,4 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
   get '/:category_name', to: 'categories#show'
 end
+ 
