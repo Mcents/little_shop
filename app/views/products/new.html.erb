@@ -8,7 +8,11 @@
   <%= f.label :price %>
   <%= f.text_field :price %>
 
+  <%= f.label :brand %>
+  <%= f.collection_select(:brand_id, Brand.all, :id, :name, {class: "form-control"}) %>
+
   <%= f.label :categories %>
   <%= collection_check_boxes(:product, :category_ids, Category.all, :id, :name) %>
   <%= f.submit "Create Product" %>
  <% end %>
+

@@ -1,15 +1,11 @@
 require 'rails_helper'
 
 RSpec.feature "unauthenticated user can create an account" do
-  before(:each) do
-    reset_session!
-  end
-  
   scenario "and be re-directed to the root" do
-  user_attributes = {
-    username: "michaelc",
-    password: "mypassword"
-    }
+    user_attributes = {
+      username: "michaelc",
+      password: "mypassword"
+      }
 
     visit new_user_path
     fill_in "user[username]", with: user_attributes[:username]
