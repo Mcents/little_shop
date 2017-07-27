@@ -1,14 +1,22 @@
 require 'rails_helper'
 
 RSpec.feature "unauthenticated user can create an account" do
-  scenario "and be re-directed to the root" do
-  user_attributes = {
-    username: "michaelc",
-    password: "mypassword"
-    }
+  before (:each) do
+    Product.create!(
+    name: "Television",
+    description: "It shows moving pictures",
+    price: 5.00
+    )
+  end
 
-    visit new_user_path 
-    fill_in "user[username]", with: user_attributes[:username] 
+  scenario "and be re-directed to the root" do
+    user_attributes = {
+      username: "michaelc",
+      password: "mypassword"
+      }
+
+    visit new_user_path
+    fill_in "user[username]", with: user_attributes[:username]
     fill_in "user[password]", with: user_attributes[:password]
     click_on "Create Account"
 
@@ -18,4 +26,3 @@ RSpec.feature "unauthenticated user can create an account" do
     expect(current_path).to eq(root_path)
   end
 end
-

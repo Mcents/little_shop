@@ -25,4 +25,14 @@ RSpec.feature "When a user adds products to their shopping cart" do
     expect(page).to have_content("2 Televisions in Cart")
   end
 
+  scenario "the total number of items in the cart increments" do
+    visit products_path
+    expect(page).to have_content("Your Cart 0")
+    click_button "Add Product"
+
+    expect(page).to have_content("Your Cart 1")
+    click_button "Add Product"
+
+    expect(page).to have_content("Your Cart 2")
+  end
 end
