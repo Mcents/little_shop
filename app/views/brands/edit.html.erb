@@ -1,7 +1,7 @@
 
 Edit <%= @brand.name %>
 
-<%= form_for(:brand, url: brands_path, html: {method: "patch"}) do |f| %>
+<%= form_for(@brand) do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
 
