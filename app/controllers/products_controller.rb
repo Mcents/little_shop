@@ -12,6 +12,16 @@ def create
   end
 end
 
+def create
+  @categories = Category.find_by(params[:category_ids])
+  @product = @categories.products.new(product_params)
+  if @product.save
+     redirect_to products_path
+   else
+     render :new
+   end
+end
+
 def show
   @product = Product.find(params[:id])
 end

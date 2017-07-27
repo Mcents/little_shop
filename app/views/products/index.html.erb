@@ -2,5 +2,7 @@
   <%= p.name %>
   <%= p.description %>
   <%= p.price %>
+
   <%= button_to "Add Product", shopping_carts_path(product_id: p.id), class: "btn btn-success" %>
+
 <% end %>

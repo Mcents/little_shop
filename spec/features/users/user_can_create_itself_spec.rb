@@ -1,12 +1,17 @@
 require 'rails_helper'
 
 RSpec.feature "unauthenticated user can create an account" do
+
   before (:each) do
     Product.create!(
     name: "Television",
     description: "It shows moving pictures",
     price: 5.00
     )
+  end
+
+  before(:each) do
+    reset_session!
   end
 
   scenario "and be re-directed to the root" do

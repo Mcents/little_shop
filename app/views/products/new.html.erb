@@ -8,5 +8,12 @@
   <%= f.label :price %>
   <%= f.text_field :price %>
 
+
   <%= f.submit "Create Product" %>
 <% end %>
+
+  <%= f.label :categories %>
+  <%= collection_check_boxes(:product, :category_ids, Category.all, :id, :name) %>
+  <%= f.submit "Create Product" %>
+ <% end %>
+
