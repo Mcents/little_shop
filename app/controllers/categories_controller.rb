@@ -20,8 +20,6 @@ class CategoriesController < ApplicationController
     if @category
       @product = @category.products
     else
-      render :404
-      #refactor protect category "wildcard" route  get navbar to show on 404
     end
   end
 

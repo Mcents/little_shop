@@ -1,46 +1,45 @@
 class ProductsController < ApplicationController
 
-def new
-end
-
-def create
-  @product = Product.new(product_params)
-  if @product.save
-    redirect_to products_path
-  else
-    render :new
+  def new
   end
-end
 
-def create
-  @categories = Category.find_by(params[:category_ids])
-  @product = @categories.products.new(product_params)
-  if @product.save
-     redirect_to products_path
-   else
-     render :new
-   end
-end
+  def create
+    @product = Product.new(product_params)
+    if @product.save
+      redirect_to products_path
+    else
+      render :new
+    end
+  end
 
-def show
-  @product = Product.find(params[:id])
-end
+  def create
+    @categories = Category.find_by(params[:category_ids])
+    @product = @categories.products.new(product_params)
+    if @product.save
+      redirect_to products_path
+    else
+      render :new
+    end
+  end
 
-def index
-  @products = Product.all
-end
+  def show
+    @product = Product.find(params[:id])
+  end
 
-def destroy
-  @product = Product.find(params[:id])
-  @product.destroy
+  def index
+    @products = Product.all
+  end
 
-  redirect_to products_path
-end
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
 
-private
+    redirect_to products_path
+  end
 
-def product_params
-  params.require(:product).permit(:name, :description, :price, category_ids: [], :brand_id)
-end
+  private
 
+  def product_params
+    params.require(:product).permit(:name, :description, :price, :brand_id, category_ids: [])
+  end
 end

@@ -11,7 +11,7 @@ class ShoppingCartsController < ApplicationController
     redirect_to products_path
   end
 
-  def show
+  def index
     @products = Product.all
   end
 end

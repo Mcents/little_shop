@@ -2,8 +2,9 @@ require 'rails_helper'
 
 RSpec.feature "User can view all products" do
   scenario "on the products index page" do
-    product1 = Product.create(name: "prod1", description: "Awesome stuff", price: 500)
-    product2 = Product.create(name: "prod2", description: "Also sick", price: 200)
+    brand = Brand.create(name: "apple")
+    product1 = Product.create(name: "prod1", description: "Awesome stuff", price: 500, brand_id: brand.id)
+    product2 = Product.create(name: "prod2", description: "Also sick", price: 200, brand_id: brand.id)
 
     visit products_path
 

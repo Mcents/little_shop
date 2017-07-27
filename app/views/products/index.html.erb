@@ -1,8 +1,8 @@
-<% @products.each do |p| %>
-  <%= p.name %>
-  <%= p.description %>
-  <%= p.price %>
+<% @products.each do |product| %>
+  <%= product.name %>
+  <%= product.description %>
+  <%= product.price %>
 
-  <%= button_to "Add Product", shopping_carts_path(product_id: p.id), class: "btn btn-success" %>
+  <%= button_to "Add Product", shopping_carts_path(product_id: product.id), class: "btn btn-success" %>
 
 <% end %>
