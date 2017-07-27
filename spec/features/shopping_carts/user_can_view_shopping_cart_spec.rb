@@ -16,9 +16,13 @@ RSpec.feature "When a user clicks on the shopping cart" do
     click_link "Your Cart"
 
     expect(current_path).to eq("/cart")
+    save_and_open_page
 
     expect(page).to have_content(@product.name)
     expect(page).to have_content(@product.description)
     expect(page).to have_css("img[src*='bbystatic']")
+
+
+    expect(page).to have_content("Cart Total: 15.00")
   end
 end
