@@ -3,7 +3,6 @@ require 'rails_helper'
 
 RSpec.feature "Admin can edit an existing brand" do
   scenario "in order to modify details" do
-    puts "hi mom"
     brand = Brand.create(name: "Sony")
 
     visit edit_brand_path(brand)
