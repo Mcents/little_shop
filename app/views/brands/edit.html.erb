@@ -1,9 +1,9 @@
 
-Edit <%= @brand.name %> 
+Edit <%= @brand.name %>
 
-<%= form_for(:brand, url: brands_path) do |f| %>
+<%= form_for(:brand, url: brands_path, html: {method: "patch"}) do |f| %>
   <%= f.label :name %>
-  <%= f.text_field :name, :value => "#{@brand.name}" %>
+  <%= f.text_field :name %>
 
   <%= f.submit "Submit" %>
 <% end %>

@@ -10,7 +10,22 @@ class BrandsController < ApplicationController
     #refactor, push down to class method
   end
 
+  def edit
+    @brand = Brand.find(params[:id])
+  end
+
+  def update
+    @brand = Brand.find(params[:id])
+    if @brand.update_attributes(brand_params)
+      flash[:notice] = "Brand #{@brand.name} updated!"
+      redirect_to brand_path(@brand)
+    else
+      render :edit
+    end
+  end
+
   def create
+    byebug
     @brand = Brand.new(brand_params)
     if @brand.save
       flash[:notice] = "#{@brand.name} added!"
@@ -20,20 +35,7 @@ class BrandsController < ApplicationController
     end
   end
 
-  def edit
-    @brand = Brand.find(params[:id])
-  end
 
-  def update
-    @brand = Brand.find(params[:id])
-    @brand.update(brand_params)
-    if @brand.save(brand_params)
-      flash[:notice] = "Brand #{@brand.name} updated!"
-      redirect_to brand_path(@brand)
-    else
-      render :edit
-    end
-  end
 
   private
 
