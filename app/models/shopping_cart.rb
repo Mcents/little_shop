@@ -35,5 +35,10 @@ class ShoppingCart
     contents.delete(id)
   end
 
+  def change_quantity(product_id, quantity)
+    @contents[product_id.to_s] += quantity.to_i
+    remove_product(product_id) if @contents[product_id.to_s] <= 0
+  end
+
 
 end
