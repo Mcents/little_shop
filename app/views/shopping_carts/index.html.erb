@@ -1,11 +1,12 @@
-<table class="table table-striped" id="cart-contents">
+<div class="well">
+  <table class="table table-striped" id="cart-contents">
   <% @shopping_cart.show_products.each do |product, count| %>
-    <tr>
+      <tr>
       <th>Image</th>
       <th>Name</th>
       <th>Description</th>
       <th>Price</th>
-      <th>Amount</th>
+      <th>Quantity</th>
       <th>Increase/Decrease</th>
       <th>Remove</th>
     </tr>
@@ -23,9 +24,8 @@
         <td>
         <%= button_to "Remove Product", update_cart_path(product_id: product.id), method: :delete, class: "btn btn-success" %>
       <% end %>
-        </td>
-      </br>
-      <tr>
-        <td>
+        </td> 
+  </table>
+          
       Cart Total: <%= @shopping_cart.total_price %>
-    </tr></td>
+</div>
