@@ -20,6 +20,17 @@ def edit
   @product = Product.find(params[:id])
 end
 
+def update
+  @product = Product.find(params[:id])
+  @product.update(product_params)
+  if @product.save
+    flash[:success] = "Product Updated!"
+    redirect_to product_path(@product)
+  else
+    render :edit
+  end
+end
+
 def index
   @products = Product.all
 end
