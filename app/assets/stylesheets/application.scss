@@ -144,6 +144,8 @@
      text-decoration: none;
  }
 
+ .well {box-sizing: border-box!important}
+
  .links:hover {
      color: #fff;
      text-decoration: none;
@@ -313,7 +315,7 @@ ul.thumbnails.image_picker_selector {
 .footer {
   padding: 100px;
   position: relative;
-  margin-top: 100px; /* negative value of footer height */
+  margin-top: 50px; /* negative value of footer height */
   height: 150px;
   clear:both;
   padding-top:100px;

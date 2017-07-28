@@ -1,31 +1,31 @@
 <div class="well">
   <table class="table table-striped" id="cart-contents">
-  <% @shopping_cart.show_products.each do |product, count| %>
+    <% @shopping_cart.show_products.each do |product, count| %>
       <tr>
-      <th>Image</th>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th>Quantity</th>
-      <th>Increase/Decrease</th>
-      <th>Remove</th>
-    </tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Increase/Decrease</th>
+        <th>Remove</th>
+      </tr>
       <td> <span class="thumbnail-custom"><%= image_tag(product.image_path)%></span></td>
       <td> Name: <%= product.name %></td>
       <td> Description: <%= product.description %></td>
       <td> Price: <%= product.price %></td>
       <td> Item Total: <%= count %></td>
       <td>
-      <div class="btn-group">
-        <%= button_to "+", cart_path(product_id: product.id, quantity_change: 1), method: "put" %>
-        <%= button_to "-", cart_path(product_id: product.id, quantity_change: -1), method: "put" %>
-      </div>
-        </td>
-        <td>
+        <div class="btn-group">
+          <%= button_to "+", cart_path(product_id: product.id, quantity_change: 1), method: "put" %>
+          <%= button_to "-", cart_path(product_id: product.id, quantity_change: -1), method: "put" %>
+        </div>
+      </td>
+      <td>
         <%= button_to "Remove Product", update_cart_path(product_id: product.id), method: :delete, class: "btn btn-success" %>
       <% end %>
-        </td> 
+      </td> 
   </table>
-          
-      Cart Total: <%= @shopping_cart.total_price %>
+
+  Cart Total: <%= @shopping_cart.total_price %>
 </div>
