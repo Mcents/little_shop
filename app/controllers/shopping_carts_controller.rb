@@ -16,7 +16,9 @@ class ShoppingCartsController < ApplicationController
   end
 
   def remove
+    product = Product.find(params[:product_id])
     @shopping_cart.remove_product(params[:product_id])
+    flash[:notice] = %Q[Successfully removed <a href="/products/#{product.id}"> #{product.name}</a> from your cart].html_safe
     redirect_to cart_path
   end
 
