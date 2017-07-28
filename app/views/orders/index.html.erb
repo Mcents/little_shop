@@ -1,0 +1,8 @@
+
+<h1>Your Order History</h1>
+
+<% @orders.each do |order| %>
+Item:<%= order.product.name %><br><br>
+$<%= order.product.price %><br><br>
+<% end %>
+<br><br>
