@@ -19,7 +19,7 @@ RSpec.feature "When a user adds products to their shopping cart" do
 
     visit products_path
     expect(page).to have_content("Your Cart 0")
-    
+
     first(:button, "Add Product").click
 
     expect(page).to have_content("Your Cart 1")
