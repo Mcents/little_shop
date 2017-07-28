@@ -5,8 +5,8 @@
   Price: <%= product.price %>
   Item Total: <%= count %>
 
-    
-<%= button_to "Remove", { :controller => "shopping_carts", :action => "remove"} %>
+
+  <%= button_to "Remove Product", update_cart_path(product_id: product.id), method: :put, class: "btn btn-success" %>
 <% end %>
 </br>
 Cart Total: <%= @shopping_cart.total_price %>

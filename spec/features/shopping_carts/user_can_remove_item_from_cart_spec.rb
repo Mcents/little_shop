@@ -10,10 +10,10 @@ RSpec.feature "User can remove item from cart" do
   visit products_path
   first(:button, "Add Product").click
   first(:button, "Add Product").click
-  
+
   visit cart_path
   first(:button, "Remove").click
- 
+
   expect(current_path).to eq(cart_path)
   expect(page).to have_content("Cart Total: 0")
 

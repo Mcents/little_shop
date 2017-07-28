@@ -32,6 +32,8 @@ class ShoppingCart
   end
 
   def remove_product(id)
-    contents[id.to_s].remove
+    contents.delete(id)
   end
+
+
 end

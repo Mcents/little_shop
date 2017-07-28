@@ -15,4 +15,9 @@ class ShoppingCartsController < ApplicationController
     @products = Product.all
   end
 
+  def remove
+    @shopping_cart.remove_product(params[:product_id])
+    redirect_to cart_path
+  end
+
 end
