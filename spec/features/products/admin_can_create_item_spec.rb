@@ -17,7 +17,7 @@ RSpec.feature "Admin can create products" do
     check("monitors")
 
     click_on "Create Product"
-
+    
     product = Product.last
 
     expect(current_path).to eq(products_path)
