@@ -16,5 +16,9 @@ RSpec.feature "User can update cart quantity" do
     visit cart_path
     click_button('-')
     expect(page).to have_content("Your Cart 1") 
+
+    click_button('+')
+    click_button('+')
+    expect(page).to have_content("Your Cart 3")
   end
 end
