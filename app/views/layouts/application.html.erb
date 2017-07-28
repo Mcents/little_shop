@@ -15,7 +15,12 @@
             <div class="row row1">
                 <ul class="largenav pull-right">
                 <li class="upper-links"><a class="links" href="http://clashhacks.in/">Home</a></li>
-                <li class="upper-links"><a class="links" href="https://campusbox.org/">Sign In</a></li>
+                <li class="upper-links">
+                  <% if current_user %>
+                    <%= link_to "Logged in as #{User.find(current_user.id).username}", logout_path, class:"links" %>
+                  <% else %>
+                    <a class="links" href="/login">Sign In</a></li>
+                  <% end %>
                 <!-- <li class="upper-links"><a class="links" href="http://clashhacks.in/">Link 3</a></li>
                 <li class="upper-links"><a class="links" href="http://clashhacks.in/">Link 4</a></li>
                 <li class="upper-links"><a class="links" href="http://clashhacks.in/">Link 5</a></li>
