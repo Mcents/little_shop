@@ -42,8 +42,8 @@ ActiveRecord::Schema.define(version: 20170727163242) do
     t.decimal "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "brand_id"
     t.string "image_path"
+    t.bigint "brand_id"
     t.index ["brand_id"], name: "index_products_on_brand_id"
   end
 
