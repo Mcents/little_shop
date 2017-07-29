@@ -92,6 +92,13 @@
     <a href="http://clashhacks.in/">Link</a>
     <a href="http://clashhacks.in/">Link</a>
 </div>
+
+    <% flash.each do |type, message| %>
+      <%= content_tag :div, sanitize(message), class: type %>
+    <% end %>
+
+    <%= yield %>
+
     <div class="container">
 
     <hr class="featurette-divider">

@@ -14,7 +14,8 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
 
   get "/cart", to: "shopping_carts#index"
-  put "/cart", to: "shopping_carts#remove"
+  put "/cart", to: "shopping_carts#update"
+  delete "/update_cart", to: "shopping_carts#destroy"
 
   get '/:category_name', to: 'categories#show'
 
