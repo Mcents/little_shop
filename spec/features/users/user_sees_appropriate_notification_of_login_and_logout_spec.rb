@@ -21,6 +21,8 @@ RSpec.feature "As a registered user" do
     expect(current_path).to eq('/dashboard')
     expect(page).to have_content("Logged in as #{user.username}")
     expect(page).to_not have_content("Login")
+    expect(page).to have_content("Logout")
+    expect(page).to have_content("Welcome #{user.username}")
 
   end
 end

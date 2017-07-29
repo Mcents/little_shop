@@ -1,7 +1,7 @@
 
 Rails.application.routes.draw do
   root to: "dashboards#index"
-  resources :users
+  resources :users, except: [:show]
   resources :brands
   resources :products
   resources :categories
