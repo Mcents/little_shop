@@ -5,6 +5,20 @@ class Admin::ProductsController < Admin::BaseController
     @categories = Category.all
   end
 
+  def edit
+    @product = Product.find(params[:id])
+    @categories = Category.all
+  end
+
+  def update
+    @product = Product.find(params[:id])
+    if @product.update(product_params)
+      redirect_to admin_products_path
+    else
+      redirect_to edit_admin_product_path(@product, name: @product.name)
+    end
+  end
+
   def create
     @product = Product.new(product_params)
     if @product.save
