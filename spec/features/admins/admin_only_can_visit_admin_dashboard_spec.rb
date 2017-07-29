@@ -28,5 +28,6 @@ describe "as a unregistered user when I visit /admin/dashboard" do
     visit '/admin/dashboard'
     
     expect(page).to have_content("The page you were looking for doesn't exist")
+  require 'rails_helper'
   end
 end
