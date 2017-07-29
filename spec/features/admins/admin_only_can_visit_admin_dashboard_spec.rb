@@ -21,3 +21,12 @@ describe "as a registered user when I visit /admin/dashboard" do
     expect(page).to have_content("The page you were looking for doesn't exist.")
   end
 end
+
+describe "as a unregistered user when I visit /admin/dashboard" do
+  scenario "I see a 404" do
+
+    visit '/admin/dashboard'
+    
+    expect(page).to have_content("The page you were looking for doesn't exist")
+  end
+end
