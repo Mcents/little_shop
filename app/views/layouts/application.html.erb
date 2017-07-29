@@ -15,12 +15,7 @@
             <div class="row row1">
                 <ul class="largenav pull-right">
                 <li class="upper-links"><a class="links" href="http://clashhacks.in/">Home</a></li>
-                <li class="upper-links">
-                  <% if current_user %>
-                    <%= "Logged in as #{User.find(current_user.id).username}, " %><strong><%= link_to "Logout?", logout_path, method: :delete, class:"links" %></strong>
-                  <% else %>
-                    <%= link_to "Login", login_path, class:"links" %>
-                  <% end %>
+                <li class="upper-links"><a class="links" href="https://campusbox.org/">Sign In</a></li>
                 <!-- <li class="upper-links"><a class="links" href="http://clashhacks.in/">Link 3</a></li>
                 <li class="upper-links"><a class="links" href="http://clashhacks.in/">Link 4</a></li>
                 <li class="upper-links"><a class="links" href="http://clashhacks.in/">Link 5</a></li>
@@ -93,11 +88,17 @@
     <a href="http://clashhacks.in/">Link</a>
 </div>
 
+    <% if current_user %>
+      <%= current_user.username %>'s GearUpp
+      <%= link_to "Logout", logout_path, method: :delete %>
+    <% end %>
+
     <% flash.each do |type, message| %>
       <%= content_tag :div, sanitize(message), class: type %>
     <% end %>
 
     <%= yield %>
+
 
     <div class="container">
 
