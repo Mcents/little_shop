@@ -2,6 +2,6 @@
 <h1>Your Order History</h1>
 
 <% @orders.each do |order| %>
-:<%= link_to order.id %><br><br>
+View order: <%= link_to "#{order.id}", order_path(order) %><br><br>
 <% end %>
 <br><br>

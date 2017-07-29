@@ -1,14 +1,14 @@
 
-<%= link_to @order.product.name, redirect_to product_path(product) %>
+<% @order.product.each do |product| %>
+<%= link_to product.name, product_path(product) %>
 
+$<%= product.price %><br><br>
+<%= product.quantity %><br><br>
+<%= product.total_price %><br><br>
+<%= @order.created_at %>
+<%= @order.status %>
 
-$<%= order.product.price %><br><br>
-<%= order.product.quantity %><br><br>
-<%= order.product.total_price %><br><br>
-<%= order.created_at %>
-<%= order.status %>
-<br><br>
-
-<% if order.status == 2 || order.status == 3 %>
-  <%= order.updated_at %>
-  <% end %>
+  <% if @order.status == 2 || @order.status == 3 %>
+    <%= @order.updated_at %>
+    <% end %><br><br>
+<% end %>

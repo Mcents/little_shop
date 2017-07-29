@@ -22,9 +22,9 @@ RSpec.feature "As an authenticated user" do
     expect(page).to have_content(order1.id)
     expect(page).to have_content(order2.id)
 
-    click_link order1.id
+    click_on(order1.id)
 
-    expect(page).to have_content("ordered")
+    expect(page).to have_content(order1.status)
     expect(page).to have_content(500)
     expect(order1.created_at).to eq(3/3/56)
 
