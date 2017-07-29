@@ -9,16 +9,11 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       flash[:notice] = "Successful login"
       redirect_to root_path
-      # refactor if admin redirect to admin dashboard
-    else
-      redirect_to login_path
     end
   end
 
   def destroy
     session[:user_id] = nil
-    flash[:notice] = "Successful logout"
-
 
     redirect_to root_path
   end
