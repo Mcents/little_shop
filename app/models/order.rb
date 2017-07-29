@@ -2,8 +2,5 @@ class Order < ApplicationRecord
   belongs_to :user
   belongs_to :product
 
-
-  def display_orders_for_users
-
-  end
+  enum status: ["ordered", "paid", "cancelled", "completed"]
 end

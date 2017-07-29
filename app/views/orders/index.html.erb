@@ -2,7 +2,6 @@
 <h1>Your Order History</h1>
 
 <% @orders.each do |order| %>
-Item:<%= order.product.name %><br><br>
-$<%= order.product.price %><br><br>
+:<%= link_to order.id %><br><br>
 <% end %>
 <br><br>

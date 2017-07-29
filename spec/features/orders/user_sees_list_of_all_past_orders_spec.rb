@@ -23,9 +23,10 @@ RSpec.feature "As an authenticated user" do
 
     visit orders_path
 
-    expect(page).to have_content("prod1")
-    expect(page).to have_content("prod2")
-    expect(page).to_not have_content("prod3")
+    expect(page).to have_content(order1.id)
+    expect(page).to have_content(order2.id)
+    expect(page).to_not have_content(order3.id)
+    # refactor get first user to logout and second user to login
 
     # click_on "Logout?"
     #
