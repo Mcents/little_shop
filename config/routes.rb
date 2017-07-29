@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   namespace :admin do
     get '/dashboard', to: 'dashboard#index'
     get '/dashboard/:id', to: 'dashboard#show', as: 'order'
-    resources :trips
+    resources :products
   end
 
   resources :users, except: [:show]
