@@ -1,6 +1,13 @@
 
 Rails.application.routes.draw do
   root to: "dashboards#index"
+
+  namespace :admin do
+    get '/dashboard', to: 'dashboard#index'
+    get '/dashboard/:id', to: 'dashboard#show', as: 'order'
+    resources :trips
+  end
+
   resources :users, except: [:show]
   resources :brands
   resources :products
