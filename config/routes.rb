@@ -9,10 +9,12 @@ Rails.application.routes.draw do
   end
 
   resources :users, except: [:show]
+  resources :orders
   resources :brands
   resources :products
   resources :categories
   resources :shopping_carts
+
 
   get "/cart", to: "shopping_carts#index"
   put "/cart", to: "shopping_carts#update"
