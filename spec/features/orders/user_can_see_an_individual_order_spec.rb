@@ -70,6 +70,7 @@ RSpec.feature  " If the order was completed or cancelled" do
 
     expect(page).to have_content(order1.status)
     expect(order1.status).to eq("completed")
+    expect(page).to have_content("Updated at")
     expect(order1.updated_at.class).to eq(ActiveSupport::TimeWithZone)
   end
 end

@@ -3,21 +3,21 @@
 
 
 <% @order.products.uniq.each do |product| %>
-<%= link_to product.name, product_path(product) %>
+<%= link_to product.name, product_path(product) %> <br>
 
 $<%= product.price %><br><br>
-<%= @order.quantity[product] %>
-line item total <%= @line_item = @order.quantity[product] * product.price %>
+Quantity: <%= @order.quantity[product] %> <br>
+line item total $ <%= @line_item = @order.quantity[product] * product.price %><br>
  <% @total << @line_item %>
-order status <%= @order.status %>
-ordered on <%= @order.created_at %>
+Current Status:  <%= @order.status %> <br>
+Ordered on: <%= @order.created_at %> <br>
 
-  <% if @order.status == 2 || @order.status == 3 %>
-    updated at<%= @order.updated_at %>
+  <% if @order.cancelled? || @order.completed?  %>
+    Updated at: <%= @order.updated_at %>
     <% end %><br><br>
 <br><br>
 
 <% end %>
 
 
-<%= @total.reduce(:+) %>
+Total amount for this order: $<%= @total.reduce(:+) %>
