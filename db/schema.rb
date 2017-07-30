@@ -27,6 +27,23 @@ ActiveRecord::Schema.define(version: 20170730045437) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "order_products", force: :cascade do |t|
+    t.bigint "product_id"
+    t.bigint "order_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_order_products_on_order_id"
+    t.index ["product_id"], name: "index_order_products_on_product_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "status", default: 0
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
   create_table "product_categories", force: :cascade do |t|
     t.bigint "category_id"
     t.bigint "product_id"
@@ -42,8 +59,8 @@ ActiveRecord::Schema.define(version: 20170730045437) do
     t.decimal "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "image_path"
     t.bigint "brand_id"
+    t.string "image_path"
     t.integer "role", default: 0
     t.index ["brand_id"], name: "index_products_on_brand_id"
   end
@@ -55,6 +72,9 @@ ActiveRecord::Schema.define(version: 20170730045437) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "order_products", "orders"
+  add_foreign_key "order_products", "products"
+  add_foreign_key "orders", "users"
   add_foreign_key "product_categories", "categories"
   add_foreign_key "product_categories", "products"
 end

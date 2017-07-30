@@ -1,0 +1,25 @@
+<h1>Products on this Order</h1>
+<% @total = Array.new %>
+
+
+<% @order.products.uniq.each do |product| %>
+<%= link_to product.name, product_path(product) %> <br>
+
+$<%= product.price %><br><br>
+Quantity: <%= @order.quantity[product] %> <br>
+line item total $ <%= @line_item = @order.quantity[product] * product.price %><br>
+ <% @total << @line_item %>
+Current Status:  <%= @order.status %> <br>
+Ordered on: <%= @order.created_at %> <br>
+
+  <% if @order.cancelled? || @order.completed?  %>
+    Updated at: <%= @order.updated_at %>
+    <% end %><br><br>
+<br><br>
+
+<% end %>
+
+
+Total amount for this order: $<%= @total.reduce(:+) %>
+
+<%#refactor need to push some of this logic to the model  %>
