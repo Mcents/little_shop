@@ -8,4 +8,6 @@
   <%= f.submit "Login", class: "login-button-unique"%>
 <% end %>
 
+Not a registered user? <%= link_to "Create an Account", new_user_path, class:"user-creation" %> to GearUpp!
+
 <%= flash[:notice] %>
