@@ -9,5 +9,6 @@ RSpec.feature "User can see retired products" do
 
     expect(page).to_not have_button("Add Product")
     expect(page).to have_button("Item Retired")
+    save_and_open_page
   end
 end

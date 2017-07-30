@@ -5,6 +5,6 @@
 <% if @product.active?  %>
 <%= button_to "Add Product", shopping_carts_path(product_id: @product.id), class: "btn btn-success"%>
 <% elsif @product.retired? %>
-<%= button_to "Item Retired", shopping_carts_path(product_id: @product.id), class: "btn btn-success"%>
+<%= button_to "Item Retired", products_path, class: "btn btn-success"%>
 <% end %>
 <%= link_to "Delete", product_path(@product), method: :delete %>
