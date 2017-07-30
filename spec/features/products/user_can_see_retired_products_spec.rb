@@ -7,7 +7,7 @@ RSpec.feature "User can see retired products" do
 
     visit product_path(product)
 
-    expect(page).to_not have_content("Add Product")
-    expect(page).to have_content("Item Retired")
+    expect(page).to_not have_button("Add Product")
+    expect(page).to have_button("Item Retired")
   end
 end
