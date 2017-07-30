@@ -9,4 +9,5 @@ class Product < ApplicationRecord
   validates :description, presence: true
   validates :price, presence: true
 
+  enum role: %w(active retired)
 end
