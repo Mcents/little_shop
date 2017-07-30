@@ -17,6 +17,7 @@ class UsersController < ApplicationController
   end
 
   def update
+    @user = User.find(params[:id])
     if @user.update(user_params)
       redirect_to dashboard_path
     else
@@ -36,7 +37,7 @@ class UsersController < ApplicationController
       redirect_to "/dashboard"
     else
       flash[:notice] = "Invalid credentials"
-      redirect to new_user_path
+      redirect_to new_user_path
     end
   end
 
