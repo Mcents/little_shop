@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature "User can see retired products" do
-  scenario "when a user visits that item's show page" do
+  scenario "when a user visits a retired item's show page" do
     brand = Brand.create!(name: "ToysRus")
     product = Product.create!(name: "Magic Mirror", description: "Show gifs", brand: brand, price: 45.99, image_path: "http://www.murphysmagicmirror.co.uk/wp-content/uploads/2017/01/MagicMirror_15.jpg?gid=1", role: 1)
 

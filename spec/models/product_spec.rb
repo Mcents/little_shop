@@ -24,5 +24,4 @@ RSpec.describe Product, type: :model do
     expect(product.role).to eq("retired")
     expect(product.retired?).to be_truthy
   end
-
 end

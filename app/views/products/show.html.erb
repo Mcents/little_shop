@@ -2,4 +2,5 @@
 <%= @product.description %>
 <%= @product.price %>
 
+<%= button_to "Add Product", shopping_carts_path(product_id: @product.id), class: "btn btn-success"%>
 <%= link_to "Delete", product_path(@product), method: :delete %>
