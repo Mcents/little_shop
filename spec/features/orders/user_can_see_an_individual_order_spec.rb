@@ -32,7 +32,7 @@ RSpec.feature "As an authenticated user" do
 save_and_open_page
     expect(page).to have_content(order1.status)
     expect(page).to have_content(500)
-    expect(order1.created_at).to eq(3/3/56)
+    expect(order1.created_at.class).to eq(ActiveSupport::TimeWithZone)
 
   end
 end
