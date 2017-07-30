@@ -26,5 +26,20 @@ RSpec.feature "As an authenticated user" do
     expect(page).to have_content(order1.id)
     expect(page).to have_content(order2.id)
     expect(page).to_not have_content(order3.id)
+    # refactor get first user to logout and second user to login
+
+    # click_on "Logout?"
+    #
+    #
+    # visit root_path
+    # click_link "Login"
+    # # page.all(:css, '.login-button-unique')[0].click
+    # fill_in "session[username]", with: user2.username
+    # fill_in "session[password]", with: user2.password
+    # click_button "Login"
+    # save_and_open_page
+    # expect(page).to_not have_content("prod1")
+    # expect(page).to_not have_content("prod2")
+    # expect(page).to have_content("prod3")
   end
 end

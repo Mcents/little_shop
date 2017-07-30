@@ -1,3 +1,25 @@
 <h1>Admin Dashboard</h1>
 
 <%= link_to "Products", admin_products_path %>
+
+
+<h3>All Orders</h3>
+
+<% @orders.each do |order| %>
+View order: <%= link_to "#{order.id}", admin_order_path(order) %><br><br>
+<% end %>
+<br><br>
+
+
+<h4>Total number of orders for each status</h4>
+<ul>
+  <% ordered_amount = Order.where(status: 0).count %>
+  <% paid_amount = Order.where(status: 1).count %>
+  <% cancelled_amount = Order.where(status: 2).count %>
+  <% completed_amount = Order.where(status: 3).count %>
+
+  Ordered: <%= ordered_amount %><br>
+  Paid: <%= paid_amount  %><br>
+  Cancelled: <%= cancelled_amount %><br>
+  Completed: <%= completed_amount %><br>
+</ul>
