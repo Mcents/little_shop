@@ -8,8 +8,11 @@ class SessionsController < ApplicationController
     if @user && @user.authenticate(params[:session][:password])
       session[:user_id] = @user.id
       flash[:notice] = "Successful login"
-      redirect_to root_path
+      redirect_to "/dashboard"
     end
+  end
+
+  def show
   end
 
   def destroy

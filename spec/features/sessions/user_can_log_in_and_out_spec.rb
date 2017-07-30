@@ -15,11 +15,12 @@ RSpec.feature "User can log in and out of a session" do
     visit login_path
     fill_in "session[username]", with: user.username
     fill_in "session[password]", with: user_attributes[:password]
-    click_on "Login"
 
-    expect(page).to have_content("Successful login")
+    page.all(:css, '.login-button-unique')[0].click
+
+    expect(current_path).to eq("/dashboard")
     expect(page).to have_content(user.username)
-    expect(current_path).to eq(root_path)
+    expect(page).to have_content("Successful login")
 
     click_on "Logout"
     expect(current_path).to eq(root_path)

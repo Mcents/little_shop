@@ -14,4 +14,19 @@ class ShoppingCartsController < ApplicationController
   def index
     @products = Product.all
   end
+
+  def destroy
+    product = Product.find(params[:product_id])
+    @shopping_cart.remove_product(params[:product_id])
+    flash[:notice] = %Q[Successfully removed <a href="/products/#{product.id}"> #{product.name}</a> from your cart].html_safe
+    session[:shopping_cart] = @shopping_cart.contents
+    redirect_to cart_path
+  end
+
+  def update
+    @shopping_cart.change_quantity(params[:product_id], params[:quantity_change])
+    session[:shopping_cart] = @shopping_cart.contents
+    redirect_to cart_path
+  end
+
 end
