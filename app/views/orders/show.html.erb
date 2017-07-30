@@ -1,14 +1,23 @@
+<h1>Products on this Order</h1>
+<% @total = Array.new %>
 
-<% @order.product.each do |product| %>
+
+<% @order.products.uniq.each do |product| %>
 <%= link_to product.name, product_path(product) %>
 
 $<%= product.price %><br><br>
-<%= product.quantity %><br><br>
-<%= product.total_price %><br><br>
-<%= @order.created_at %>
-<%= @order.status %>
+<%= @order.quantity[product] %>
+line item total <%= @line_item = @order.quantity[product] * product.price %>
+ <% @total << @line_item %>
+order status <%= @order.status %>
+ordered on <%= @order.created_at %>
 
   <% if @order.status == 2 || @order.status == 3 %>
-    <%= @order.updated_at %>
+    updated at<%= @order.updated_at %>
     <% end %><br><br>
+<br><br>
+
 <% end %>
+
+
+<%= @total.reduce(:+) %>

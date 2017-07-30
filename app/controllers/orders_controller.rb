@@ -5,7 +5,11 @@ class OrdersController < ApplicationController
   end
 
   def show
-    @order = Order.find(params[:id])
+
+    # @order = Order.find(params[:id])
+    @user = User.last
+    @order = @user.orders.find(params[:id])
+
     # current_user
     # @user  = User.find(params[:user_id])
   end

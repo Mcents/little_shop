@@ -5,11 +5,17 @@ RSpec.feature "As an authenticated user" do
     user  = User.create(username: "dude", password: "password")
 
     brand = Brand.create(name: "Sony")
-    product1 = Product.create(name: "prod1", description: "Awesome stuff", price: 500, brand_id: brand.id)
-    product2 = Product.create(name: "prod2", description: "Also sick", price: 200, brand_id: brand.id)
 
-    order1 = Order.create(product_id: product1.id, user_id: user.id)
-    order2 = Order.create(product_id: product2.id, user_id: user.id)
+    order1 = Order.create(user_id: user.id)
+    order2 = Order.create(user_id: user.id)
+
+    product1 = Product.create!(name: "prod1", description: "Awesome stuff", price: 500, brand_id: brand.id)
+    product2 = Product.create!(name: "prod2", description: "Also sick", price: 200, brand_id: brand.id)
+    product3 = Product.find_by(name: "prod2")
+
+    order1.products << product1
+    order1.products << product2
+    order1.products << product3
 
     visit root_path
     click_link "Login"
@@ -23,7 +29,7 @@ RSpec.feature "As an authenticated user" do
     expect(page).to have_content(order2.id)
 
     click_on(order1.id)
-
+save_and_open_page
     expect(page).to have_content(order1.status)
     expect(page).to have_content(500)
     expect(order1.created_at).to eq(3/3/56)
