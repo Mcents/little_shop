@@ -4,10 +4,24 @@ class UsersController < ApplicationController
 
   end
 
+  def show
+    if current_user 
+      @user = current_user
+    else
+      render file: 'public/404', layout: false
+    end
+  end
+
   def edit
+    render file: 'public/404', layout: false unless current_user && current_user == @user
   end
 
   def update
+    if @user.update(user_params)
+      redirect_to dashboard_path
+    else
+      render :edit
+    end
   end
 
   def index
