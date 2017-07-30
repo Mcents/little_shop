@@ -10,9 +10,9 @@ RSpec.feature "As an authenticated user" do
     product2 = Product.create(name: "prod2", description: "Also sick", price: 200, brand_id: brand.id)
     product3 = Product.create(name: "prod3", description: "basic", price: 20, brand_id: brand.id)
 
-    order1 = Order.create(product_id: product1.id, user_id: user.id)
-    order2 = Order.create(product_id: product2.id, user_id: user.id)
-    order3 = Order.create(product_id: product3.id, user_id: user2.id)
+    order1 = Order.create(user_id: user.id)
+    order2 = Order.create(user_id: user.id)
+    order3 = Order.create(user_id: user2.id)
 
     visit root_path
     click_link "Login"
