@@ -25,6 +25,6 @@ RSpec.feature "As an authenticated user" do
 
     expect(page).to have_content(order1.id)
     expect(page).to have_content(order2.id)
-    expect(page).to_not have_content(order3.id)
+    expect(body).to_not have_content(order3.id)
   end
 end
