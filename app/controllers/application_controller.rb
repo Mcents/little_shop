@@ -4,7 +4,7 @@
   before_action :set_shopping_cart
 
   def current_user
-    @user ||= User.find(session[:user_id]) if session[:user_id]
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
   def set_shopping_cart
