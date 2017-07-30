@@ -10,4 +10,8 @@
   def set_shopping_cart
     @shopping_cart ||= ShoppingCart.new(session[:shopping_cart])
   end
+
+  def current_admin?
+    current_user && current_user.admin?
+  end
 end

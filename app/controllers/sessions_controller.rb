@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     if @user && @user.authenticate(params[:session][:password])
       session[:user_id] = @user.id
       flash[:notice] = "Successful login"
-      redirect_to "/dashboard"
+      user_type(@user)
     end
   end
 
@@ -19,5 +19,13 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
 
     redirect_to root_path
+  end
+
+  def user_type(user)
+    if user.admin?
+      redirect_to admin_dashboard_path
+    else
+      redirect_to dashboard_path
+    end
   end
 end

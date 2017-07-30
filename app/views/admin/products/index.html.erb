@@ -1,0 +1,8 @@
+<% @products.each do |product| %>
+  <%= product.image_path  %>
+  <%= link_to product.name %>
+  <%= product.description %>
+
+<%= link_to "Edit", edit_admin_product_path(product, name: product.name) %>
+
+<% end %>

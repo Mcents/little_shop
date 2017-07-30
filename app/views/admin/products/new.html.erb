@@ -1,0 +1,22 @@
+<%= form_for([:admin, @product]) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+
+  <%= f.label :price %>
+  <%= f.text_field :price %>
+
+  <%= f.label :image_path %>
+  <%= f.text_field :image_path %>
+
+
+  <%= f.label :brand %>
+  <%= f.collection_select(:brand_id, Brand.all, :id, :name, {class: "form-control"}) %>
+
+  <%= f.label :category %>
+  <%= collection_check_boxes(:product, :category_ids, Category.all, :id, :name) %>
+
+  <%= f.submit %>
+<% end %>
