@@ -8,6 +8,7 @@
 
 <% @order.each do |order| %>
   <%= order.id %>
+  <%= order.user.username %>
 
   <% if order.status == "ordered" %>
     <%= button_to "Mark Paid", admin_dashboard_path(order_id: order.id) %>
