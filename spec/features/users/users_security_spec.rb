@@ -18,6 +18,7 @@ RSpec.feature "Users cannot view other users' private data" do
 
     @order2.products << [product2, product3]
   end
+  
   scenario "as authenticated users" do
 
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
@@ -34,6 +35,9 @@ RSpec.feature "Users cannot view other users' private data" do
     visit orders_path
     expect(page).to have_content(@order1.id)
     expect(page).to_not have_content(@order2.id)
+
+    visit order_path(@order1)
+    expect(page).to_not have_content(@order2.products)
 
     visit admin_dashboard_path
     expect(page).to have_content("The page you were looking for doesn't exist.")
