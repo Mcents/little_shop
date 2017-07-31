@@ -19,15 +19,13 @@ RSpec.feature "As a guest user" do
     expect(current_path).to eq("/cart")
 
 
-    expect(page).to_not have_content("Checkout")
-    #refactor ^^ to look for css tag on checkout button
-    #refactor vv to "Login or Create Account to Checkout"
+    expect(page).to_not have_css('current_user_accessible')
     expect(page).to have_content("Login")
 
     page.all(:css, '.login-navbar-unique')[0].click
 
     click_on "Create an Account"
-    
+
     fill_in "user[username]", with: user_attributes[:username]
     fill_in "user[password]", with: user_attributes[:password]
     fill_in "user[confirm_password]", with: user_attributes[:password]

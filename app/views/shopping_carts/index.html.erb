@@ -32,4 +32,9 @@
   </table>
 
   Cart Total: <%= @shopping_cart.total_price %>
+  <% if current_user %>
+    <%= "Checkout" %><strong><%= link_to "Logout?", logout_path, method: :put, class:"current_user_accessible" %></strong>
+   <% else %>
+     <%= link_to "Login", login_path, class:"links login-navbar-unique" %>
+   <% end %>
 </div>
