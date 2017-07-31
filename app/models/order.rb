@@ -12,5 +12,4 @@ class Order < ApplicationRecord
   # def line_total
   #   self.quantity[product] * prod
   # end
-
 end
