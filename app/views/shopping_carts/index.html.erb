@@ -1,7 +1,6 @@
 <div class="well">
   <table class="table table-striped" id="cart-contents">
     <% if current_user ==nil %>
-      <%#= link_to "Login or Create Account to Checkout", login_path %>
     <% end %>
 
     <% @shopping_cart.show_products.each do |product, count| %>
@@ -32,4 +31,9 @@
   </table>
 
   Cart Total: <%= @shopping_cart.total_price %>
+  <% if current_user %>
+    <%= link_to "Checkout", orders_path, method: :post, class: 'current_user_accessible' %>
+   <% else %>
+     <%= link_to "Please login or create an account to checkout.", login_path %>
+   <% end %>
 </div>
