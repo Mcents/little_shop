@@ -28,5 +28,4 @@ class ShoppingCartsController < ApplicationController
     session[:shopping_cart] = @shopping_cart.contents
     redirect_to cart_path
   end
-
 end
