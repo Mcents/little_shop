@@ -7,4 +7,6 @@
 <% elsif @product.retired? %>
 <%= button_to "Item Retired", products_path, class: "btn btn-success"%>
 <% end %>
-<%= link_to "Delete", product_path(@product), method: :delete %>
+<% if current_user.admin? %>
+  <%= link_to "Delete", product_path(@product), method: :delete %>
+<% end %>
