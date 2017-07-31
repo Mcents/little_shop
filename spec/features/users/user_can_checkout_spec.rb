@@ -41,6 +41,5 @@ RSpec.feature "As a user" do
     expect(page).to have_content("Your Cart 0")
     expect(page).to have_content("Order was successfully placed")
     expect(page).to have_content(order.id)
-    #refactor ^^ And I should see the order I just placed in a table
   end
 end
