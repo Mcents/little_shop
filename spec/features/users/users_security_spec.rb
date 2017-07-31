@@ -48,7 +48,7 @@ RSpec.feature "Users cannot view other users' private data" do
   scenario "as unauthenticated users" do
 
     visit user_path(@user)
-    expect(page).to have_content("Welcome #{@user.username}")
+    expect(page).to_not have_content("Welcome #{@user.username}")
 
     visit user_path(@user2)
     expect(page).to_not have_content("Welcome #{@user2.username}")
@@ -57,7 +57,7 @@ RSpec.feature "Users cannot view other users' private data" do
     expect(page).to have_content("The page you were looking for doesn't exist.")
 
     visit orders_path
-    expect(page).to have_content(@order1.id)
+    expect(page).to_not have_content(@order1.id)
     expect(page).to_not have_content(@order2.id)
 
     visit admin_dashboard_path
