@@ -8,4 +8,5 @@ class OrdersController < ApplicationController
     @user = User.last
     @order = @user.orders.find(params[:id])
   end
+
 end
