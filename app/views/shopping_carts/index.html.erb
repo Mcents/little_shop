@@ -1,5 +1,9 @@
 <div class="well">
   <table class="table table-striped" id="cart-contents">
+    <% if current_user ==nil %>
+      <%= link_to "Login or Create Account to Checkout", login_path %>
+    <% end %>
+
     <% @shopping_cart.show_products.each do |product, count| %>
       <tr>
         <th>Image</th>
@@ -24,8 +28,13 @@
       <td>
         <%= button_to "Remove Product", update_cart_path(product_id: product.id), method: :delete, class: "btn btn-success" %>
       <% end %>
-      </td> 
+      </td>
   </table>
 
   Cart Total: <%= @shopping_cart.total_price %>
+  <% if current_user %>
+    <%= "Checkout" %><strong><%= link_to "Logout?", logout_path, method: :put, class:"current_user_accessible" %></strong>
+   <% else %>
+     <%= link_to "Login", login_path, class:"links login-navbar-unique" %>
+   <% end %>
 </div>

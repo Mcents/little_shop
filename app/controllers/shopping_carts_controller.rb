@@ -29,4 +29,11 @@ class ShoppingCartsController < ApplicationController
     redirect_to cart_path
   end
 
+  def checkout
+    # order = Order.new(user_id: current_user.id)
+    # session[:contents].keys.each do |product_id|
+    #   (contents[:product_id]).times do order.products << Product.find_by(:id product_id)
+    # end
+  end
+
 end

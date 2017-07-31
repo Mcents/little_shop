@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get "/cart", to: "shopping_carts#index"
   put "/cart", to: "shopping_carts#update"
   delete "/update_cart", to: "shopping_carts#destroy"
+  # put "/checkout" to: "shopping_carts#checkout"
 
   get "/dashboard", to: "users#show"
   get "/login", to: "sessions#new"
