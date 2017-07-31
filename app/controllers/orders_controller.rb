@@ -1,7 +1,11 @@
 class OrdersController < ApplicationController
 
   def index
-    @orders = Order.where(user_id: current_user.id)
+    if current_user.nil?
+      redirect_to "public/404"
+    else
+      @orders = Order.where(user_id: current_user.id)
+    end
   end
 
   def show

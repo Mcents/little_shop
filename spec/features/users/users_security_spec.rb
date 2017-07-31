@@ -56,9 +56,10 @@ RSpec.feature "Users cannot view other users' private data" do
     visit edit_user_path(@user2)
     expect(page).to have_content("The page you were looking for doesn't exist.")
 
+    # I should be redirected to login/create account when I try to check out.
+
     visit orders_path
-    expect(page).to_not have_content(@order1.id)
-    expect(page).to_not have_content(@order2.id)
+    expect(page).to have_content("The page you were looking for doesn't exist.")
 
     visit admin_dashboard_path
     expect(page).to have_content("The page you were looking for doesn't exist.")
