@@ -14,11 +14,15 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @new_order = Order.new(user_id: current_user.id)
-    populate_new_order
-    clean_cart
-    redirect_to orders_path
-    flash[:notice]  = "Order was successfully placed"
+    if current_user.nil?
+      redirect_to login_path
+    else
+      @new_order = Order.new(user_id: current_user.id)
+      populate_new_order
+      clean_cart
+      redirect_to orders_path
+      flash[:notice]  = "Order was successfully placed"
+    end
   end
 
 private

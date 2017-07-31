@@ -18,7 +18,7 @@ RSpec.feature "Users cannot view other users' private data" do
 
     @order2.products << [product2, product3]
   end
-  
+
   scenario "as authenticated users" do
 
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
@@ -57,10 +57,13 @@ RSpec.feature "Users cannot view other users' private data" do
     visit user_path(@user2)
     expect(page).to_not have_content("Welcome #{@user2.username}")
 
+    visit cart_path
+    save_and_open_page
+    click_link("Please login or create an account to checkout.")
+    expect(current_path).to eq(login_path)
+
     visit edit_user_path(@user2)
     expect(page).to have_content("The page you were looking for doesn't exist.")
-
-    # I should be redirected to login/create account when I try to check out.
 
     visit orders_path
     expect(page).to have_content("The page you were looking for doesn't exist.")
