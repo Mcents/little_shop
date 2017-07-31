@@ -1,0 +1,9 @@
+
+<h1>All orders with ordered status</h1>
+
+<% @ordered_products = Order.where(status: 0) %>
+
+<% @ordered_products.each do |ordered_product| %>
+<%= ordered_product.id %>
+<%= ordered_product.price %>
+<% end %>
