@@ -9,6 +9,10 @@ class Admin::DashboardController <Admin::BaseController
     end
   end
 
+  def show
+    @order = Order.find(params[:id])
+  end
+
   def edit_status
     @order = Order.find(params[:order_id])
       if @order.status == 'ordered'
