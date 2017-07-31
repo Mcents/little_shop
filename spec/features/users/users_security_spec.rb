@@ -33,5 +33,14 @@ RSpec.feature "Users cannot view other users' private data" do
     visit orders_path
     expect(page).to have_content(order1.id)
     expect(page).to_not have_content(order2.id)
+
+    visit admin_dashboard_path
+    expect(page).to have_content("The page you were looking for doesn't exist.")
+
+    visit admin_products_path
+    expect(page).to have_content("The page you were looking for doesn't exist.")
+
+    visit edit_user_path(user)
+    expect(page).to_not have_content("Role")
   end
 end
