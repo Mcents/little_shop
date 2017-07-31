@@ -3,7 +3,7 @@ class Admin::DashboardController <Admin::BaseController
   def index
     if params.include?("status")
       @order = Order.where(status: params[:status])
-      render :show
+      render :status
     else
       @orders = Order.all 
     end
