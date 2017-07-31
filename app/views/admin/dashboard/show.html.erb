@@ -14,8 +14,13 @@
 <% end %>
 
 
-  <% if order.status == "paid" %>
+  <% if order.status == "paid" || order.status == 'ordered' %>
     <%= button_to "Cancel", admin_dashboard_path(order_id: order.id) %>
+<% end %>
+
+
+  <% if order.status == "paid" %>
+    <%= button_to "Mark Completed", admin_dashboard_path(order_id: order.id) %>
 <% end %>
 
 <% end %>
