@@ -58,7 +58,6 @@ RSpec.feature "Users cannot view other users' private data" do
     expect(page).to_not have_content("Welcome #{@user2.username}")
 
     visit cart_path
-    save_and_open_page
     click_link("Please login or create an account to checkout.")
     expect(current_path).to eq(login_path)
 
