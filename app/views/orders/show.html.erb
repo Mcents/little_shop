@@ -1,14 +1,19 @@
 <h1>Products on this Order</h1>
-<% @total = Array.new %>
 
+<%= @order.user.username %>
+<%= @order.id %>
+<%= @order.created_at %>
+<%= @order.user.full_name %>
+<%= @order.user.address %>
+<%= @order.status %>
+<% @order.products.uniq.each_with_index do |product, index| %>
+  <%= link_to product.name, product_path(product) %>
+  <%= product.price %>
+  <%= @order.quantity[product.id] %>
+  <%= @order.line_total[index] %>
+<% end %>
 
-<% @order.products.uniq.each do |product| %>
-<%= link_to product.name, product_path(product) %> <br>
-
-$<%= product.price %><br><br>
-Quantity: <%= @order.quantity[product] %> <br>
-line item total $ <%= @line_item = @order.quantity[product] * product.price %><br>
- <% @total << @line_item %>
+Total Price: $<%= @order.total_price %>
 Current Status:  <%= @order.status %> <br>
 Ordered on: <%= @order.created_at %> <br>
 
@@ -16,10 +21,3 @@ Ordered on: <%= @order.created_at %> <br>
     Updated at: <%= @order.updated_at %>
     <% end %><br><br>
 <br><br>
-
-<% end %>
-
-
-Total amount for this order: $<%= @total.reduce(:+) %>
-
-<%#refactor need to push some of this logic to the model  %>

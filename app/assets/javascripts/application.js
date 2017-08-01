@@ -58,7 +58,6 @@ $(document).ready(function() {
   sanitized_options = function(opts) {
     var default_options;
     default_options = {
-      hide_select: true,
       show_label: false,
       initialized: void 0,
       changed: void 0,

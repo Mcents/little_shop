@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   namespace :admin do
     get '/dashboard', to: 'dashboard#index'
     get '/dashboard/:id', to: 'dashboard#show', as: 'order'
+    post '/dashboard', to: 'dashboard#edit_status'
     resources :products
   end
 
@@ -14,7 +15,6 @@ Rails.application.routes.draw do
   resources :products
   resources :categories
   resources :shopping_carts
-
 
   get "/cart", to: "shopping_carts#index"
   put "/cart", to: "shopping_carts#update"

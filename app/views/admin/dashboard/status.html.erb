@@ -1,0 +1,31 @@
+
+
+<%= link_to "Paid", {controller: 'dashboard', action: 'index', :status => 1} %>
+
+<%= link_to "Cancelled", {controller: 'dashboard', action: 'index', :status => 2} %>
+
+<%= link_to "Completed", {controller: 'dashboard', action: 'index', :status => 3} %>
+<br>
+
+<% @order.each do |order| %>
+  <%= order.id %>
+  <%= order.user.username %>
+
+  <% if order.status == "ordered" %>
+    <%= button_to "Mark Paid", admin_dashboard_path(order_id: order.id) %>
+<% end %>
+
+
+  <% if order.status == "paid" || order.status == 'ordered' %>
+    <%= button_to "Cancel", admin_dashboard_path(order_id: order.id) %>
+<% end %>
+
+
+  <% if order.status == "paid" %>
+    <%= button_to "Mark Completed", admin_dashboard_path(order_id: order.id) %>
+<% end %>
+
+<% end %>
+<br>
+<%= link_to "Back to Dashboard", admin_dashboard_path %>
+

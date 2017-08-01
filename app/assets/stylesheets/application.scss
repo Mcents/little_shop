@@ -40,6 +40,9 @@
      font-size: 15px;
  }
 
+ .droppy {
+   display: inline !important;
+ }
 
 
  .flipkart-navbar-button {
@@ -128,7 +131,6 @@
  .dropdown .dropdown-menu {
      position: absolute;
      top: 100%;
-     display: none;
      background-color: #fff;
      color: #333;
      left: 0px;

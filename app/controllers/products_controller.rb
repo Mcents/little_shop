@@ -3,14 +3,6 @@ class ProductsController < ApplicationController
 def new
 end
 
-def create
-  @product = Product.new(product_params)
-  if @product.save
-    redirect_to products_path
-  else
-    render :new
-  end
-end
 
 def show
   @product = Product.find(params[:id])
@@ -27,6 +19,7 @@ def update
     flash[:success] = "Product Updated!"
     redirect_to product_path(@product)
   else
+    flash[:notice] = "Invalid Credentials"
     render :edit
   end
 end
