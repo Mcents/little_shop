@@ -32,7 +32,6 @@ RSpec.feature "Admin can edit a product" do
 
 
     click_button "Update Product"
-    save_and_open_page
 
     expect(page).to have_content("Invalid Credentials")
   end
