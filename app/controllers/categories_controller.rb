@@ -36,7 +36,7 @@ class CategoriesController < ApplicationController
       flash[:notice] = "Category #{@category.name} updated!"
       redirect_to ("/#{@category.name}")
     else
-      render :edit
+      redirect_to edit_category_path(@category)
     end
   end
 
