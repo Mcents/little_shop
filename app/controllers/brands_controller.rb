@@ -11,7 +11,6 @@ class BrandsController < ApplicationController
   def show
     @brand = Brand.find(params[:id])
     @brand_products = @brand.products
-    #refactor, push down to class method
   end
 
   def edit
