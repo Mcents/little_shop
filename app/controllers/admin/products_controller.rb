@@ -15,6 +15,7 @@ class Admin::ProductsController < Admin::BaseController
     if @product.update(product_params)
       redirect_to admin_products_path
     else
+      flash[:notice] = "Invalid Credentials"
       redirect_to edit_admin_product_path(@product, name: @product.name)
     end
   end
@@ -28,19 +29,8 @@ class Admin::ProductsController < Admin::BaseController
     end
   end
 
-  def show
-    @product = Product.find(params[:id])
-  end
-
   def index
     @products = Product.all
-  end
-
-  def destroy
-    @product = Product.find(params[:id])
-    @product.destroy
-
-    redirect_to products_path
   end
 
   private
