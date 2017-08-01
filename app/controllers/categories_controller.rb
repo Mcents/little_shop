@@ -15,7 +15,7 @@ class CategoriesController < ApplicationController
 
       redirect_to "/#{@category.name}"
     else
-      render :new
+      redirect_to new_category_path
     end
   end
 
