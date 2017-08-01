@@ -6,7 +6,17 @@ class Order < ApplicationRecord
   enum status: ["ordered", "paid", "cancelled", "completed"]
 
   def quantity
-    self.products.inject(Hash.new(0)){|h, e| h[e] += 1; h}
+    self.products.group(:product_id).count
+  end
+
+  def line_total
+    self.products.uniq.map do |product|
+      self.quantity[product.id] * product.price.to_f
+    end
+  end
+
+  def total_price
+    self.quantity * self.line_total
   end
 
   # def line_total
