@@ -7,8 +7,8 @@
 <% @order.products.uniq.each_with_index do |product, index| %>
   <%= link_to product.name, product_path(product) %>
   <%= product.price %>
-  <%= @order.quantity[product.id] %>  
+  <%= @order.quantity[product.id] %>
   <%= @order.line_total[index] %>
 <% end %>
-<%= @order.total_price %>
 
+Total Price: $<%= @order.total_price %>

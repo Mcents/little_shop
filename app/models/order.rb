@@ -10,16 +10,12 @@ class Order < ApplicationRecord
   end
 
   def line_total
-    self.products.uniq.map do |product|
+    @all_prices = self.products.uniq.map do |product|
       self.quantity[product.id] * product.price.to_f
     end
   end
 
   def total_price
-    self.quantity * self.line_total
+    @all_prices.reduce(:+)
   end
-
-  # def line_total
-  #   self.quantity[product] * prod
-  # end
 end
