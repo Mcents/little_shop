@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.feature "User cannot edit their profile" do
-  scenario "without a password" do
+RSpec.feature "User cannot " do
+  scenario "edit their profile without a password" do
     user1 = User.create(username: "usericus", password: "password", role: 0)
     visit login_path
     fill_in "session[username]", with: "usericus"
@@ -17,7 +17,7 @@ RSpec.feature "User cannot edit their profile" do
     expect(current_path).to eq(user_path(user1))
   end
 
-  scenario "without a username" do
+  scenario "edit their profile without a username" do
     user1 = User.create(username: "usericus", password: "password", role: 0)
     visit login_path
     fill_in "session[username]", with: "usericus"
@@ -32,5 +32,19 @@ RSpec.feature "User cannot edit their profile" do
     click_on "Update Account"
 
     expect(current_path).to eq(user_path(user1))
+  end
+
+  scenario "create an account without a username" do
+    visit new_user_path
+    fill_in "user[password]", with: "password"
+    click_on "Create Account"
+    expect(current_path).to eq(new_user_path)
+  end
+
+  scenario "create an account without a password" do
+    visit new_user_path
+    fill_in "user[username]", with: "username"
+    click_on "Create Account"
+    expect(current_path).to eq(new_user_path)
   end
 end
