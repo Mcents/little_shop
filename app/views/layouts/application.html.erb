@@ -30,14 +30,17 @@
                     </a>
                 </li>
                 <li class="upper-links dropdown"><%= link_to "Categories", categories_path, class: "links" %>
-                    <ul class="dropdown-menu">
-                        <li class="profile-li"><a class="profile-links" href="http://yazilife.com/">Link</a></li>
-                        <li class="profile-li"><a class="profile-links" href="http://hacksociety.tech/">Link</a></li>
+                    <ul class="dropdown-menu"><% @categories.each do |category| %>
+                        <li class="profile-li"><a class="profile-links"><%= link_to category.name, "/#{category.name}" %></a></li>
+                        <% end %>
+
+<!--
+                        <li class="profile-li"><a class="profile-links" href="/TVs">TVs</a></li>
                         <li class="profile-li"><a class="profile-links" href="http://clashhacks.in/">Link</a></li>
                         <li class="profile-li"><a class="profile-links" href="http://clashhacks.in/">Link</a></li>
                         <li class="profile-li"><a class="profile-links" href="http://clashhacks.in/">Link</a></li>
                         <li class="profile-li"><a class="profile-links" href="http://clashhacks.in/">Link</a></li>
-                        <li class="profile-li"><a class="profile-links" href="http://clashhacks.in/">Link</a></li>
+                        <li class="profile-li"><a class="profile-links" href="http://clashhacks.in/">Link</a></li> -->
                     </ul>
                 </li>
                 <li class="upper-links dropdown"><a class="links" href="http://clashhacks.in/">Brands</a>
