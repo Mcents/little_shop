@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    if current_user 
+    if current_user
       @user = current_user
     else
       render file: 'public/404', layout: false
@@ -23,10 +23,6 @@ class UsersController < ApplicationController
     else
       render :edit
     end
-  end
-
-  def index
-    @users = User.all
   end
 
   def create
