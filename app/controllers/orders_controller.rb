@@ -14,15 +14,11 @@ class OrdersController < ApplicationController
   end
 
   def create
-    if current_user.nil?
-      redirect_to login_path
-    else
-      @new_order = Order.new(user_id: current_user.id)
-      populate_new_order
-      clean_cart
-      redirect_to orders_path
-      flash[:notice]  = "Order was successfully placed"
-    end
+    @new_order = Order.new(user_id: current_user.id)
+    populate_new_order
+    clean_cart
+    redirect_to orders_path
+    flash[:notice]  = "Order was successfully placed"
   end
 
 private
@@ -36,10 +32,6 @@ private
   def clean_cart
     if @new_order.save
       session[:shopping_cart] = {}
-    else
-      flash[:notice] = "Oops! We couldn't process your order. \n
-                        Please try again in a moment. \n
-                        If the probelm persists, contact the site administrator."
     end
   end
 end

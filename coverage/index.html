@@ -13,6 +13,28 @@
     <div id="loading">
       <img src="./assets/0.10.1/loading.gif" alt="loading"/>
     </div>
+    <div id="wrapper" style="display:none;">
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-08-01T15:13:10-06:00">2017-08-01T15:13:10-06:00</abbr></div>
+      <ul class="group_tabs"></ul>
+
+      <div id="content">
+        <div class="file_list_container" id="AllFiles">
+  <h2>
+    <span class="group_name">All Files</span>
+    (<span class="covered_percent"><span class="green">98.3%</span></span>
+     covered at
+     <span class="covered_strength">
+       <span class="green">
+         5.21
+       </span>
+    </span> hits/line)
+  </h2>
+  <a name="AllFiles"></a>
+  <div>
+    <b>37</b> files in total.
+    <b>352</b> relevant lines. 
+    <span class="green"><b>346</b> lines covered</span> and
+    <span class="red"><b>6</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -65,6 +87,7 @@
         <td>10</td>
         <td>10</td>
         <td>0</td>
+        <td>56.0</td>
       </tr>
       
       <tr>
@@ -99,12 +122,12 @@
       
       <tr>
         <td class="strong"><a href="#3504fc54a39f076d610dfe2ff98297650c642087" class="src_link" title="app/controllers/orders_controller.rb">app/controllers/orders_controller.rb</a></td>
-        <td class="green strong">91.67 %</td>
-        <td>45</td>
-        <td>24</td>
-        <td>22</td>
-        <td>2</td>
-        <td>1.5</td>
+        <td class="green strong">100.0 %</td>
+        <td>37</td>
+        <td>21</td>
+        <td>21</td>
+        <td>0</td>
+        <td>1.7</td>
       </tr>
       
       <tr>
@@ -114,7 +137,7 @@
         <td>23</td>
         <td>23</td>
         <td>0</td>
-        <td>2.5</td>
+        <td>2.6</td>
       </tr>
       
       <tr>
@@ -124,7 +147,7 @@
         <td>19</td>
         <td>17</td>
         <td>2</td>
-
+        <td>4.5</td>
       </tr>
       
       <tr>
@@ -134,9 +157,18 @@
         <td>20</td>
         <td>20</td>
         <td>0</td>
-        <td>5.1</td>
+        <td>5.4</td>
       </tr>
-
+      
+      <tr>
+        <td class="strong"><a href="#c86507bbe77f277b1e6c08ce4e38204ae368d30b" class="src_link" title="app/controllers/users_controller.rb">app/controllers/users_controller.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>49</td>
+        <td>26</td>
+        <td>26</td>
+        <td>0</td>
+        <td>3.7</td>
+      </tr>
       
       <tr>
         <td class="strong"><a href="#3e8acb53f20228ab67efd632efa6dbc2686489d1" class="src_link" title="app/helpers/application_helper.rb">app/helpers/application_helper.rb</a></td>
@@ -245,7 +277,8 @@
         <td>23</td>
         <td>23</td>
         <td>0</td>
-
+        <td>21.9</td>
+      </tr>
       
       <tr>
         <td class="strong"><a href="#33907bb864faf7d125e7d71a99010cc2ccc71443" class="src_link" title="app/models/user.rb">app/models/user.rb</a></td>
@@ -978,7 +1011,8 @@
           <code class="ruby">  def current_user</code>
         </li>
       
-
+        <li class="covered" data-hits="291" data-linenumber="7">
+          <span class="hits">291</span>
           
           <code class="ruby">    @current_user ||= User.find(session[:user_id]) if session[:user_id]</code>
         </li>
@@ -1001,7 +1035,9 @@
           <code class="ruby">  def set_shopping_cart</code>
         </li>
       
-
+        <li class="covered" data-hits="218" data-linenumber="11">
+          <span class="hits">218</span>
+          
           <code class="ruby">    @shopping_cart ||= ShoppingCart.new(session[:shopping_cart])</code>
         </li>
       
@@ -1796,11 +1832,11 @@
         <div class="source_table" id="3504fc54a39f076d610dfe2ff98297650c642087">
   <div class="header">
     <h3>app/controllers/orders_controller.rb</h3>
-    <h4><span class="green">91.67 %</span> covered</h4>
+    <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>24</b> relevant lines. 
-      <span class="green"><b>22</b> lines covered</span> and
-      <span class="red"><b>2</b> lines missed.</span>
+      <b>21</b> relevant lines. 
+      <span class="green"><b>21</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
   
@@ -1906,172 +1942,124 @@
         <li class="covered" data-hits="1" data-linenumber="17">
           <span class="hits">1</span>
           
-          <code class="ruby">    if current_user.nil?</code>
+          <code class="ruby">    @new_order = Order.new(user_id: current_user.id)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="18">
+        <li class="covered" data-hits="1" data-linenumber="18">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      redirect_to login_path</code>
+          <code class="ruby">    populate_new_order</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="19">
+        <li class="covered" data-hits="1" data-linenumber="19">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    else</code>
+          <code class="ruby">    clean_cart</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="20">
           <span class="hits">1</span>
           
-          <code class="ruby">      @new_order = Order.new(user_id: current_user.id)</code>
+          <code class="ruby">    redirect_to orders_path</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="21">
           <span class="hits">1</span>
           
-          <code class="ruby">      populate_new_order</code>
+          <code class="ruby">    flash[:notice]  = &quot;Order was successfully placed&quot;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="22">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="22">
           
-          <code class="ruby">      clean_cart</code>
+          
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="23">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="23">
           
-          <code class="ruby">      redirect_to orders_path</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="24">
           <span class="hits">1</span>
           
-          <code class="ruby">      flash[:notice]  = &quot;Order was successfully placed&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="25">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="26">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="27">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="28">
-          <span class="hits">1</span>
-          
           <code class="ruby">private</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="29">
+        <li class="covered" data-hits="1" data-linenumber="25">
           <span class="hits">1</span>
           
           <code class="ruby">  def populate_new_order</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="30">
+        <li class="covered" data-hits="1" data-linenumber="26">
           <span class="hits">1</span>
           
           <code class="ruby">    session[:shopping_cart].keys.each do |product_id|</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="31">
+        <li class="covered" data-hits="2" data-linenumber="27">
           <span class="hits">2</span>
           
           <code class="ruby">      (session[:shopping_cart][product_id.to_s]).times do @new_order.products &lt;&lt; Product.find_by(id: product_id)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="32">
+        <li class="never" data-hits="" data-linenumber="28">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="33">
+        <li class="never" data-hits="" data-linenumber="29">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="34">
+        <li class="never" data-hits="" data-linenumber="30">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="35">
+        <li class="never" data-hits="" data-linenumber="31">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="36">
+        <li class="covered" data-hits="1" data-linenumber="32">
           <span class="hits">1</span>
           
           <code class="ruby">  def clean_cart</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="37">
+        <li class="covered" data-hits="1" data-linenumber="33">
           <span class="hits">1</span>
           
           <code class="ruby">    if @new_order.save</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="38">
+        <li class="covered" data-hits="1" data-linenumber="34">
           <span class="hits">1</span>
           
           <code class="ruby">      session[:shopping_cart] = {}</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="39">
-          
-          
-          <code class="ruby">    else</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="40">
-          
-          
-          <code class="ruby">      flash[:notice] = &quot;Oops! We couldn&#39;t process your order. \n</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="41">
-          
-          
-          <code class="ruby">                        Please try again in a moment. \n</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="42">
-          
-          
-          <code class="ruby">                        If the probelm persists, contact the site administrator.&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="43">
+        <li class="never" data-hits="" data-linenumber="35">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="44">
+        <li class="never" data-hits="" data-linenumber="36">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="45">
+        <li class="never" data-hits="" data-linenumber="37">
           
           
           <code class="ruby">end</code>
@@ -2138,8 +2126,8 @@
           <code class="ruby">def show</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="8">
-          <span class="hits">9</span>
+        <li class="covered" data-hits="10" data-linenumber="8">
+          <span class="hits">10</span>
           
           <code class="ruby">  @product = Product.find(params[:id])</code>
         </li>
@@ -2258,8 +2246,8 @@
           <code class="ruby">def index</code>
         </li>
       
-        <li class="covered" data-hits="22" data-linenumber="28">
-          <span class="hits">22</span>
+        <li class="covered" data-hits="23" data-linenumber="28">
+          <span class="hits">23</span>
           
           <code class="ruby">  @products = Product.all</code>
         </li>
@@ -2632,8 +2620,8 @@
           <code class="ruby">  def create</code>
         </li>
       
-        <li class="covered" data-hits="14" data-linenumber="5">
-          <span class="hits">14</span>
+        <li class="covered" data-hits="15" data-linenumber="5">
+          <span class="hits">15</span>
           
           <code class="ruby">    product = Product.find(params[:product_id])</code>
         </li>
@@ -2644,14 +2632,14 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="14" data-linenumber="7">
-          <span class="hits">14</span>
+        <li class="covered" data-hits="15" data-linenumber="7">
+          <span class="hits">15</span>
           
           <code class="ruby">    @shopping_cart.add_product(product.id)</code>
         </li>
       
-        <li class="covered" data-hits="14" data-linenumber="8">
-          <span class="hits">14</span>
+        <li class="covered" data-hits="15" data-linenumber="8">
+          <span class="hits">15</span>
           
           <code class="ruby">    session[:shopping_cart] = @shopping_cart.contents</code>
         </li>
@@ -2662,14 +2650,14 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="14" data-linenumber="10">
-          <span class="hits">14</span>
+        <li class="covered" data-hits="15" data-linenumber="10">
+          <span class="hits">15</span>
           
           <code class="ruby">    flash[:notice] = &quot;#{pluralize(@shopping_cart.count_of(product.id), product.name)} in Cart&quot;</code>
         </li>
       
-        <li class="covered" data-hits="14" data-linenumber="11">
-          <span class="hits">14</span>
+        <li class="covered" data-hits="15" data-linenumber="11">
+          <span class="hits">15</span>
           
           <code class="ruby">    redirect_to products_path</code>
         </li>
@@ -2692,8 +2680,8 @@
           <code class="ruby">  def index</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="15">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="15">
+          <span class="hits">13</span>
           
           <code class="ruby">    @products = Product.all</code>
         </li>
@@ -3698,7 +3686,10 @@
           <span class="hits">1</span>
           
           <code class="ruby">  def initialize(initial_contents)</code>
-
+        </li>
+      
+        <li class="covered" data-hits="221" data-linenumber="5">
+          <span class="hits">221</span>
           
           <code class="ruby">    @contents = initial_contents || {}</code>
         </li>
@@ -3721,7 +3712,8 @@
           <code class="ruby">  def total_count</code>
         </li>
       
-
+        <li class="covered" data-hits="154" data-linenumber="9">
+          <span class="hits">154</span>
           
           <code class="ruby">    contents.values.sum</code>
         </li>
@@ -3744,8 +3736,8 @@
           <code class="ruby">  def add_product(id)</code>
         </li>
       
-        <li class="covered" data-hits="16" data-linenumber="13">
-          <span class="hits">16</span>
+        <li class="covered" data-hits="17" data-linenumber="13">
+          <span class="hits">17</span>
           
           <code class="ruby">    contents[id.to_s] = (contents[id.to_s] || 0) + 1</code>
         </li>
@@ -3768,8 +3760,8 @@
           <code class="ruby">  def count_of(id)</code>
         </li>
       
-        <li class="covered" data-hits="16" data-linenumber="17">
-          <span class="hits">16</span>
+        <li class="covered" data-hits="17" data-linenumber="17">
+          <span class="hits">17</span>
           
           <code class="ruby">    contents[id.to_s].to_i</code>
         </li>
@@ -3792,20 +3784,20 @@
           <code class="ruby">  def show_products</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="21">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="21">
+          <span class="hits">13</span>
           
           <code class="ruby">    contents.reduce({}) do |final, (product_id, count)|</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="22">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="22">
+          <span class="hits">13</span>
           
           <code class="ruby">      final[Product.find(product_id.to_i)] = count</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="23">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="23">
+          <span class="hits">13</span>
           
           <code class="ruby">      final</code>
         </li>
@@ -3834,20 +3826,20 @@
           <code class="ruby">  def total_price</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="28">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="28">
+          <span class="hits">13</span>
           
           <code class="ruby">    contents.reduce(0) do |price, (product_id, count)|</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="29">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="29">
+          <span class="hits">13</span>
           
           <code class="ruby">      price += (Product.find(product_id.to_i).price * count)</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="30">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="30">
+          <span class="hits">13</span>
           
           <code class="ruby">      price</code>
         </li>
