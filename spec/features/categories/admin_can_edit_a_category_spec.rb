@@ -17,4 +17,18 @@ RSpec.feature "Admin can edit an existing category" do
     expect(Category.find(category.id).name).to eq("Wearables")
     expect(page).to_not have_content("Tablets")
   end
+
+  scenario "with invalid attributes" do
+    category = Category.create(name: "Tablets")
+
+    visit edit_category_path(category)
+
+    expect(page).to have_content("Tablets")
+    expect(category.name).to eq("Tablets")
+
+    fill_in "category[name]", with: ""
+    click_on "Submit"
+
+    expect(current_path).to eq(edit_category_path(category))
+  end
 end
