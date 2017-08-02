@@ -25,7 +25,7 @@ def update
 end
 
 def index
-  @products = Product.all
+  @products = Product.search(params[:query])
 end
 
 def destroy
