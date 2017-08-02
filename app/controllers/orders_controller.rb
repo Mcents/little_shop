@@ -22,16 +22,17 @@ class OrdersController < ApplicationController
   end
 
 private
-  def populate_new_order
-    session[:shopping_cart].keys.each do |product_id|
-      (session[:shopping_cart][product_id.to_s]).times do @new_order.products << Product.find_by(id: product_id)
-      end
+
+def populate_new_order
+  session[:shopping_cart].keys.each do |product_id|
+    (session[:shopping_cart][product_id.to_s]).times do @new_order.products << Product.find_by(id: product_id)
+    end
     end
   end
 
-  def clean_cart
-    if @new_order.save
-      session[:shopping_cart] = {}
-    end
+def clean_cart
+  if @new_order.save
+    session[:shopping_cart] = {}
+  end
   end
 end
