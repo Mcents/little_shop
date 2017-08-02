@@ -7,8 +7,8 @@ RSpec.feature "Users cannot view other users' private data" do
 
     brand = Brand.create!(name: "Sony")
 
-    product1 = Product.create!(name: "prod1", description: "Awesome stuff", price: 500, brand_id: brand.id)
-    product2 = Product.create!(name: "prod2", description: "Also sick", price: 200, brand_id: brand.id)
+    product1 = Product.create!(name: "prod1", description: "Awesome stuff", image_path: "https://img.bbystatic.com/BestBuy_US/images/products/4544/4544340_sa.jpg", price: 500, brand_id: brand.id)
+    product2 = Product.create!(name: "prod2", description: "Also sick", image_path: "https://img.bbystatic.com/BestBuy_US/images/products/4544/4544340_sa.jpg", price: 200, brand_id: brand.id)
     product3 = Product.find_by(name: "prod2")
 
     @order1 = Order.create!(user_id: @user.id)
