@@ -14,9 +14,6 @@ class Product < ApplicationRecord
   def self.search(query)
     if query
       where('name LIKE ?', "%#{query}%")
-      where('description LIKE ?', "%#{query}%")
-      where(:brand.name LIKE ?', "%#{query}%")
-      where(:category.name LIKE ?', "%#{query}%")
     else
       order('id DESC')
     end
