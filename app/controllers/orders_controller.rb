@@ -22,6 +22,7 @@ class OrdersController < ApplicationController
   end
 
 private
+
   def populate_new_order
     session[:shopping_cart].keys.each do |product_id|
       (session[:shopping_cart][product_id.to_s]).times do @new_order.products << Product.find_by(id: product_id)

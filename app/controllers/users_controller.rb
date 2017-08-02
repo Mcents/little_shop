@@ -2,7 +2,6 @@ class UsersController < ApplicationController
   before_action :find_user, only: [:edit, :update]
 
   def new
-
   end
 
   def show

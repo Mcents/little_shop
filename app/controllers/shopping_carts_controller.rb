@@ -3,7 +3,6 @@ class ShoppingCartsController < ApplicationController
 
   def create
     product = Product.find(params[:product_id])
-
     @shopping_cart.add_product(product.id)
     session[:shopping_cart] = @shopping_cart.contents
 
