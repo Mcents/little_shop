@@ -28,21 +28,21 @@
                       <%= link_to "Products", products_path, class: "links" %>
                     </a>
                 </li>
-                <li class="upper-links dropdown"><%= link_to "Categories", categories_path, class: "links" %>
+                <li class="upper-links dropdown"><a class="links">Categories</a>
                     <ul class="dropdown-menu"><% @categories.each do |category| %>
                         <li class="profile-li"><a class="profile-links"><%= link_to category.name, "/#{category.name}" %></a></li>
                         <% end %>
                     </ul>
                 </li>
-                <li class="upper-links dropdown"><a class="links" href="http://clashhacks.in/">Brands</a>
+                <li class="upper-links dropdown"><a class="links" href="">Brands</a>
                     <ul class="dropdown-menu">
-                        <li class="profile-li"><a class="profile-links" href="http://yazilife.com/">Link</a></li>
-                        <li class="profile-li"><a class="profile-links" href="http://hacksociety.tech/">Link</a></li>
-                        <li class="profile-li"><a class="profile-links" href="http://clashhacks.in/">Link</a></li>
-                        <li class="profile-li"><a class="profile-links" href="http://clashhacks.in/">Link</a></li>
-                        <li class="profile-li"><a class="profile-links" href="http://clashhacks.in/">Link</a></li>
-                        <li class="profile-li"><a class="profile-links" href="http://clashhacks.in/">Link</a></li>
-                        <li class="profile-li"><a class="profile-links" href="http://clashhacks.in/">Link</a></li>
+                        <li class="profile-li"><a class="profile-links" href="">Link</a></li>
+                        <li class="profile-li"><a class="profile-links" href="">Link</a></li>
+                        <li class="profile-li"><a class="profile-links" href="">Link</a></li>
+                        <li class="profile-li"><a class="profile-links" href="">Link</a></li>
+                        <li class="profile-li"><a class="profile-links" href="">Link</a></li>
+                        <li class="profile-li"><a class="profile-links" href="">Link</a></li>
+                        <li class="profile-li"><a class="profile-links" href="">Link</a></li>
                     </ul>
                 </li>
             </ul>
@@ -78,10 +78,10 @@
         <span class="sidenav-heading">Home</span>
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
     </div>
-    <a href="http://clashhacks.in/">Link</a>
-    <a href="http://clashhacks.in/">Link</a>
-    <a href="http://clashhacks.in/">Link</a>
-    <a href="http://clashhacks.in/">Link</a>
+    <a href="">Link</a>
+    <a href="">Link</a>
+    <a href="">Link</a>
+    <a href="">Link</a>
 </div>
 
     <% flash.each do |type, message| %>
