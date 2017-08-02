@@ -19,15 +19,15 @@
       <td>
         <div class="input-group center-buttons">
           <span class="input-group-btn">
-             <button type="button" class="btn btn-danger btn-number"  data-type="minus" data-field="quant[2]">
-               <%= link_to cart_path(product_id: product.id, quantity_change: -1), method: "put" do %><span class="glyphicon glyphicon-minus"><% end %></span>
-             </button>
+             <%= link_to cart_path(product_id: product.id, quantity_change: -1), method: "put" do %><button type="button" class="btn btn-danger btn-number"  data-type="minus" data-field="quant[2]">
+               <div style="position: absolute; left: -10000px;">-</div><span class="glyphicon glyphicon-minus"></span>
+             </button><% end %>
          </span>
          <input type="text" name="quant[2]" class="form-control input-number" value=<%= count %> min="1" max="100">
         <span class="input-group-btn">
-            <button type="button" class="btn btn-success btn-number" data-type="plus" data-field="quant[2]">
-                <%= link_to cart_path(product_id: product.id, quantity_change: 1), method: "put" do %><span class="glyphicon glyphicon-plus"><% end %></span>
-            </button>
+              <%= link_to cart_path(product_id: product.id, quantity_change: 1), method: "put" do %><button type="button" class="btn btn-success btn-number" data-type="plus" data-field="quant[2]">
+              <span class="glyphicon">+</span>
+            </button><% end %>
         </span>
         </div>
       </td>
