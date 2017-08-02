@@ -5,7 +5,6 @@ class CategoriesController < ApplicationController
   end
 
   def new
-
   end
 
   def create
@@ -15,7 +14,7 @@ class CategoriesController < ApplicationController
 
       redirect_to "/#{@category.name}"
     else
-      render :new
+      redirect_to new_category_path
     end
   end
 
@@ -36,7 +35,7 @@ class CategoriesController < ApplicationController
       flash[:notice] = "Category #{@category.name} updated!"
       redirect_to ("/#{@category.name}")
     else
-      render :edit
+      redirect_to edit_category_path(@category)
     end
   end
 
