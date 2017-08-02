@@ -5,7 +5,6 @@ class CategoriesController < ApplicationController
   end
 
   def new
-
   end
 
   def create
@@ -36,7 +35,7 @@ class CategoriesController < ApplicationController
       flash[:notice] = "Category #{@category.name} updated!"
       redirect_to ("/#{@category.name}")
     else
-      render :edit
+      redirect_to edit_category_path(@category)
     end
   end
 
@@ -44,7 +43,7 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     @category.destroy
     flash[:notice] = "#{@category.name} successfully deleted"
-    redirect_to categories_path 
+    redirect_to categories_path
   end
 
   private

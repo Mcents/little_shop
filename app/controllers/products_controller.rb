@@ -1,44 +1,43 @@
 class ProductsController < ApplicationController
 
-def new
-end
-
-
-def show
-  @product = Product.find(params[:id])
-end
-
-def edit
-  @product = Product.find(params[:id])
-end
-
-def update
-  @product = Product.find(params[:id])
-  @product.update(product_params)
-  if @product.save
-    flash[:success] = "Product Updated!"
-    redirect_to product_path(@product)
-  else
-    flash[:notice] = "Invalid Credentials"
-    render :edit
+  def new
   end
-end
+
+  def show
+    @product = Product.find(params[:id])
+  end
+
+  def edit
+    @product = Product.find(params[:id])
+  end
 
 def index
   @products = Product.search(params[:query])
 end
 
-def destroy
-  @product = Product.find(params[:id])
-  @product.destroy
+  def update
+    @product = Product.find(params[:id])
+    @product.update(product_params)
+    if @product.save
+      flash[:success] = "Product Updated!"
+      redirect_to product_path(@product)
+    else
+      flash[:notice] = "Invalid Credentials"
+      render :edit
+    end
+  end
 
-  redirect_to products_path
-end
 
-private
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
 
-def product_params
-  params.require(:product).permit(:name, :description, :price)
-end
+    redirect_to products_path
+  end
 
+  private
+
+  def product_params
+    params.require(:product).permit(:name, :description, :price)
+  end
 end

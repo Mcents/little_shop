@@ -1,8 +1,34 @@
-
-<%= @category.name %>
-<%= button_to "Edit",  edit_brand_path(@category)%>
-<%= button_to "Delete", category_path(@category), method: :delete %>
-
-<% @product.each do |product| %>
-  <%= product.name %>
-<% end %>
+<div class="container">
+    <div class="well well-sm">
+        <strong><%= @category.name %> Products</strong>
+        <div class="btn-group">
+            <a href="#" id="list" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list">
+            </span>List</a> <a href="#" id="grid" class="btn btn-default btn-sm"><span
+                class="glyphicon glyphicon-th"></span>Grid</a>
+        </div>
+    </div>
+    <div id="products" class="row list-group">
+      <% @product.each do |product| %>
+        <div class="item  col-xs-4 col-lg-4">
+            <div class="thumbnail custom-height">
+                <img class="group list-group-image" src=<%= "#{product.image_path}" %> alt="" />
+                <div class="caption">
+                    <h4 class="group inner list-group-item-heading">
+                        <%= "#{product.name}" %></h4>
+                    <p class="group inner list-group-item-text">
+                        <%= "#{product.description}" %></p>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <p class="lead">
+                                $<%= "#{product.price}" %></p>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <div><%= button_to "Add Product", shopping_carts_path(product_id: product.id), class: "btn btn-success center-block" %></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% end %>
+    </div>
+  </div>
