@@ -1,9 +1,4 @@
 
 Edit <%= @brand.name %>
 
-<%= form_for(@brand) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-
-  <%= f.submit "Submit" %>
-<% end %>
+<%= render partial: 'forms' %>

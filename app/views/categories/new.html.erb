@@ -1,7 +1,3 @@
-<%= form_for(:category, url: categories_path) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
 
-  <%= f.submit "Create Category" %>
 
-<% end %>
+<%= render partial: 'forms' %>

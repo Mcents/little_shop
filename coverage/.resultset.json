@@ -1,14 +1,14 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/michaelcentrelli/Desktop/little_shop/config/environment.rb": [
+      "/Users/vaidashi/turing/2module/projects/little_shop/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/Users/michaelcentrelli/Desktop/little_shop/config/application.rb": [
+      "/Users/vaidashi/turing/2module/projects/little_shop/config/application.rb": [
         1,
         null,
         1,
@@ -41,12 +41,12 @@
         null,
         null
       ],
-      "/Users/michaelcentrelli/Desktop/little_shop/config/boot.rb": [
+      "/Users/vaidashi/turing/2module/projects/little_shop/config/boot.rb": [
         1,
         null,
         1
       ],
-      "/Users/michaelcentrelli/Desktop/little_shop/config/environments/test.rb": [
+      "/Users/vaidashi/turing/2module/projects/little_shop/config/environments/test.rb": [
         1,
         null,
         null,
@@ -90,7 +90,7 @@
         null,
         null
       ],
-      "/Users/michaelcentrelli/Desktop/little_shop/config/initializers/application_controller_renderer.rb": [
+      "/Users/vaidashi/turing/2module/projects/little_shop/config/initializers/application_controller_renderer.rb": [
         null,
         null,
         null,
@@ -98,7 +98,7 @@
         null,
         null
       ],
-      "/Users/michaelcentrelli/Desktop/little_shop/config/initializers/assets.rb": [
+      "/Users/vaidashi/turing/2module/projects/little_shop/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -114,7 +114,7 @@
         null,
         null
       ],
-      "/Users/michaelcentrelli/Desktop/little_shop/config/initializers/backtrace_silencers.rb": [
+      "/Users/vaidashi/turing/2module/projects/little_shop/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -123,20 +123,20 @@
         null,
         null
       ],
-      "/Users/michaelcentrelli/Desktop/little_shop/config/initializers/cookies_serializer.rb": [
+      "/Users/vaidashi/turing/2module/projects/little_shop/config/initializers/cookies_serializer.rb": [
         null,
-        null,
-        null,
-        null,
-        1
-      ],
-      "/Users/michaelcentrelli/Desktop/little_shop/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "/Users/michaelcentrelli/Desktop/little_shop/config/initializers/inflections.rb": [
+      "/Users/vaidashi/turing/2module/projects/little_shop/config/initializers/filter_parameter_logging.rb": [
+        null,
+        null,
+        null,
+        1
+      ],
+      "/Users/vaidashi/turing/2module/projects/little_shop/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -154,13 +154,13 @@
         null,
         null
       ],
-      "/Users/michaelcentrelli/Desktop/little_shop/config/initializers/mime_types.rb": [
+      "/Users/vaidashi/turing/2module/projects/little_shop/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null
       ],
-      "/Users/michaelcentrelli/Desktop/little_shop/config/initializers/wrap_parameters.rb": [
+      "/Users/vaidashi/turing/2module/projects/little_shop/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -176,7 +176,7 @@
         null,
         null
       ],
-      "/Users/michaelcentrelli/Desktop/little_shop/config/routes.rb": [
+      "/Users/vaidashi/turing/2module/projects/little_shop/config/routes.rb": [
         null,
         1,
         1,
@@ -207,26 +207,26 @@
         1,
         null
       ],
-      "/Users/michaelcentrelli/Desktop/little_shop/app/helpers/application_helper.rb": [
+      "/Users/vaidashi/turing/2module/projects/little_shop/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/michaelcentrelli/Desktop/little_shop/app/helpers/dashboards_helper.rb": [
+      "/Users/vaidashi/turing/2module/projects/little_shop/app/helpers/dashboards_helper.rb": [
         1,
         null
       ],
-      "/Users/michaelcentrelli/Desktop/little_shop/app/helpers/shopping_carts_helper.rb": [
+      "/Users/vaidashi/turing/2module/projects/little_shop/app/helpers/shopping_carts_helper.rb": [
         1,
         null
       ],
-      "/Users/michaelcentrelli/Desktop/little_shop/app/controllers/dashboards_controller.rb": [
+      "/Users/vaidashi/turing/2module/projects/little_shop/app/controllers/dashboards_controller.rb": [
         1,
         1,
         null,
         null,
         null
       ],
-      "/Users/michaelcentrelli/Desktop/little_shop/app/controllers/application_controller.rb": [
+      "/Users/vaidashi/turing/2module/projects/little_shop/app/controllers/application_controller.rb": [
         1,
         1,
         1,
@@ -245,7 +245,7 @@
         null,
         null
       ],
-      "/Users/michaelcentrelli/Desktop/little_shop/app/controllers/shopping_carts_controller.rb": [
+      "/Users/vaidashi/turing/2module/projects/little_shop/app/controllers/shopping_carts_controller.rb": [
         1,
         1,
         null,
@@ -278,31 +278,31 @@
         null,
         null
       ],
-      "/Users/michaelcentrelli/Desktop/little_shop/app/models/brand.rb": [
+      "/Users/vaidashi/turing/2module/projects/little_shop/app/models/brand.rb": [
         1,
         1,
         1,
         null
       ],
-      "/Users/michaelcentrelli/Desktop/little_shop/app/models/application_record.rb": [
+      "/Users/vaidashi/turing/2module/projects/little_shop/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/Users/michaelcentrelli/Desktop/little_shop/app/models/category.rb": [
+      "/Users/vaidashi/turing/2module/projects/little_shop/app/models/category.rb": [
         1,
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/michaelcentrelli/Desktop/little_shop/app/models/order_product.rb": [
         1,
         1,
         1,
         null
       ],
-      "/Users/michaelcentrelli/Desktop/little_shop/app/models/order.rb": [
+      "/Users/vaidashi/turing/2module/projects/little_shop/app/models/order_product.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/vaidashi/turing/2module/projects/little_shop/app/models/order.rb": [
         1,
         1,
         1,
@@ -325,13 +325,13 @@
         null,
         null
       ],
-      "/Users/michaelcentrelli/Desktop/little_shop/app/models/product_category.rb": [
+      "/Users/vaidashi/turing/2module/projects/little_shop/app/models/product_category.rb": [
         1,
         1,
         1,
         null
       ],
-      "/Users/michaelcentrelli/Desktop/little_shop/app/models/product.rb": [
+      "/Users/vaidashi/turing/2module/projects/little_shop/app/models/product.rb": [
         1,
         null,
         1,
@@ -346,7 +346,7 @@
         1,
         null
       ],
-      "/Users/michaelcentrelli/Desktop/little_shop/app/models/shopping_cart.rb": [
+      "/Users/vaidashi/turing/2module/projects/little_shop/app/models/shopping_cart.rb": [
         1,
         1,
         null,
@@ -392,7 +392,7 @@
         null,
         null
       ],
-      "/Users/michaelcentrelli/Desktop/little_shop/app/models/user.rb": [
+      "/Users/vaidashi/turing/2module/projects/little_shop/app/models/user.rb": [
         1,
         1,
         1,
@@ -403,7 +403,7 @@
         1,
         null
       ],
-      "/Users/michaelcentrelli/Desktop/little_shop/app/controllers/sessions_controller.rb": [
+      "/Users/vaidashi/turing/2module/projects/little_shop/app/controllers/sessions_controller.rb": [
         1,
         null,
         1,
@@ -440,7 +440,7 @@
         null,
         null
       ],
-      "/Users/michaelcentrelli/Desktop/little_shop/app/controllers/users_controller.rb": [
+      "/Users/vaidashi/turing/2module/projects/little_shop/app/controllers/users_controller.rb": [
         1,
         1,
         null,
@@ -491,7 +491,7 @@
         null,
         null
       ],
-      "/Users/michaelcentrelli/Desktop/little_shop/app/controllers/admin/dashboard_controller.rb": [
+      "/Users/vaidashi/turing/2module/projects/little_shop/app/controllers/admin/dashboard_controller.rb": [
         1,
         null,
         1,
@@ -522,7 +522,7 @@
         null,
         null
       ],
-      "/Users/michaelcentrelli/Desktop/little_shop/app/controllers/admin/base_controller.rb": [
+      "/Users/vaidashi/turing/2module/projects/little_shop/app/controllers/admin/base_controller.rb": [
         1,
         1,
         null,
@@ -532,7 +532,7 @@
         null,
         null
       ],
-      "/Users/michaelcentrelli/Desktop/little_shop/app/controllers/admin/products_controller.rb": [
+      "/Users/vaidashi/turing/2module/projects/little_shop/app/controllers/admin/products_controller.rb": [
         1,
         null,
         1,
@@ -575,7 +575,7 @@
         null,
         null
       ],
-      "/Users/michaelcentrelli/Desktop/little_shop/app/controllers/products_controller.rb": [
+      "/Users/vaidashi/turing/2module/projects/little_shop/app/controllers/products_controller.rb": [
         1,
         null,
         1,
@@ -621,7 +621,7 @@
         null,
         null
       ],
-      "/Users/michaelcentrelli/Desktop/little_shop/app/controllers/brands_controller.rb": [
+      "/Users/vaidashi/turing/2module/projects/little_shop/app/controllers/brands_controller.rb": [
         1,
         null,
         1,
@@ -675,7 +675,7 @@
         null,
         null
       ],
-      "/Users/michaelcentrelli/Desktop/little_shop/app/controllers/categories_controller.rb": [
+      "/Users/vaidashi/turing/2module/projects/little_shop/app/controllers/categories_controller.rb": [
         1,
         null,
         1,
@@ -732,7 +732,7 @@
         null,
         null
       ],
-      "/Users/michaelcentrelli/Desktop/little_shop/app/controllers/orders_controller.rb": [
+      "/Users/vaidashi/turing/2module/projects/little_shop/app/controllers/orders_controller.rb": [
         1,
         null,
         1,
@@ -772,6 +772,6 @@
         null
       ]
     },
-    "timestamp": 1501623513
+    "timestamp": 1501699708
   }
 }

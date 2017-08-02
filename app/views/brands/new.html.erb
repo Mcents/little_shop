@@ -1,6 +1,2 @@
-<%= form_for(:brand, url: brands_path) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
 
-  <%= f.submit "Create Brand" %>
-<% end %>
+<%= render partial: 'forms' %>
