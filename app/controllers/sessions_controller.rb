@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       flash[:notice] = "Successful login"
       user_type(@user)
     else
-      flash[:login_error] = "The email or password you endtered is invalid.\n
+      flash[:login_error] = "The email or password you entered is invalid.\n
                             Have you already registered an account?"
       render :new
     end

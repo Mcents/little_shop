@@ -9,8 +9,8 @@ RSpec.feature "As an authenticated user" do
     order1 = Order.create(user_id: user.id)
     order2 = Order.create(user_id: user.id)
 
-    product1 = Product.create!(name: "prod1", description: "Awesome stuff", price: 500, brand_id: brand.id)
-    product2 = Product.create!(name: "prod2", description: "Also sick", price: 200, brand_id: brand.id)
+    product1 = Product.create!(name: "prod1", description: "Awesome stuff", price: 500, image_path: "https://img.bbystatic.com/BestBuy_US/images/products/4544/4544340_sa.jpg", brand_id: brand.id)
+    product2 = Product.create!(name: "prod2", description: "Also sick", price: 200, image_path: "https://img.bbystatic.com/BestBuy_US/images/products/4544/4544340_sa.jpg", brand_id: brand.id)
     product3 = Product.find_by(name: "prod2")
 
     order1.products << product1
@@ -47,8 +47,8 @@ RSpec.feature  " If the order was completed or cancelled" do
     order1 = Order.create(user_id: user.id, status: 3)
     order2 = Order.create(user_id: user.id)
 
-    product1 = Product.create!(name: "prod1", description: "Awesome stuff", price: 500, brand_id: brand.id)
-    product2 = Product.create!(name: "prod2", description: "Also sick", price: 200, brand_id: brand.id)
+    product1 = Product.create!(name: "prod1", description: "Awesome stuff", image_path: "https://img.bbystatic.com/BestBuy_US/images/products/4544/4544340_sa.jpg", price: 500, brand_id: brand.id)
+    product2 = Product.create!(name: "prod2", description: "Also sick", image_path: "https://img.bbystatic.com/BestBuy_US/images/products/4544/4544340_sa.jpg", price: 200, brand_id: brand.id)
     product3 = Product.find_by(name: "prod2")
 
     order1.products << product1

@@ -9,7 +9,7 @@ RSpec.feature "Admin can view all items" do
   allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
   visit admin_dashboard_path
-  click_on "Products"
+  page.all(:css, '.admin-delete')[0].click
 
   expect(page).to have_content(product1.image_path)
   expect(page).to have_link(product1.name)

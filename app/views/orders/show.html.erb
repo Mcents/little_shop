@@ -1,19 +1,36 @@
-<h1>Products on this Order</h1>
+<div class="well">
+  <table class="table table-striped" id="cart-contents">
+    <% if current_user ==nil %>
+    <% end %>
+    
+    <h1>Products on this Order</h1>
 
-<%= @order.user.username %>
-<%= @order.id %>
-<%= @order.created_at %>
-<%= @order.user.full_name %>
-<%= @order.user.address %>
-<%= @order.status %>
-<% @order.products.uniq.each_with_index do |product, index| %>
-  <%= link_to product.name, product_path(product) %>
-  <%= product.price %>
-  <%= @order.quantity[product.id] %>
-  <%= @order.line_total[index] %>
-<% end %>
+    <%= @order.user.username %> <br>
+    Order Number: <%= @order.id %><br>
+    Name: <%= @order.user.full_name %><br>
+    Address: <%= @order.user.address %><br>
+    Order Status: <%= @order.status %><br>
 
-Total Price: $<%= @order.total_price %>
+    <% @order.products.uniq.each_with_index do |product, index| %>
+      <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Order Quantity</th>
+        <th>Line Item Total</th>
+      </tr>
+      <td> <span class="thumbnail-custom"><%= image_tag(product.image_path)%></span></td>
+      <td> <%= link_to product.name, product_path(product) %></td>
+      <td> <%= product.description %></td>
+      <td> <%= product.price %></td>
+      <td> <%= @order.quantity[product.id] %></td>
+      <td> <%= @order.line_total[index] %>
+        <% end %>
+  </table>
+</div>
+
+Total Price: $<%= @order.total_price %> <br>
 Current Status:  <%= @order.status %> <br>
 Ordered on: <%= @order.created_at %> <br>
 
