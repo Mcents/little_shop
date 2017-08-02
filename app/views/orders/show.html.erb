@@ -2,8 +2,7 @@
   <table class="table table-striped" id="cart-contents">
     <% if current_user ==nil %>
     <% end %>
-
-
+    
     <h1>Products on this Order</h1>
 
     <%= @order.user.username %> <br>
@@ -20,7 +19,6 @@
         <th>Price</th>
         <th>Order Quantity</th>
         <th>Line Item Total</th>
-        <th>Remove</th>
       </tr>
       <td> <span class="thumbnail-custom"><%= image_tag(product.image_path)%></span></td>
       <td> <%= link_to product.name, product_path(product) %></td>
@@ -30,6 +28,7 @@
       <td> <%= @order.line_total[index] %>
         <% end %>
   </table>
+</div>
 
 Total Price: $<%= @order.total_price %> <br>
 Current Status:  <%= @order.status %> <br>
@@ -39,4 +38,3 @@ Ordered on: <%= @order.created_at %> <br>
     Updated at: <%= @order.updated_at %>
     <% end %><br><br>
 <br><br>
-</div>

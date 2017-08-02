@@ -1,34 +1,39 @@
-<h1>Admin Dashboard</h1>
+<div class="container">
+  <%= link_to "Products", admin_products_path, class: "admin-delete" %>
+  <div class="row">
+    <div class="page-header text-center"><h1>Admin Dashboard</h1></div>
+    <div class="col-md-6 text-center">
+      <h3>All Orders</h3>
+      <ul class="list-group"><% @orders.each do |order| %>
+        <li class="list-group-item">View order: <%= link_to "#{order.id}", admin_order_path(order) %><br>
+          Order Created: <%= order.created_at.strftime("%b. %d, %Y") %>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-6 text-center">
+      <h3>Orders by Status</h3>
+      <ul class="list-group">
+        <% ordered_amount = Order.where(status: 0).count %>
+        <% paid_amount = Order.where(status: 1).count %>
+        <% cancelled_amount = Order.where(status: 2).count %>
+        <% completed_amount = Order.where(status: 3).count %>
 
-<%= link_to "Products", admin_products_path, class: "admin-delete" %>
-
-
-<h3>All Orders</h3>
-
-<% @orders.each do |order| %>
-View order: <%= link_to "#{order.id}", admin_order_path(order) %><br><br>
-<% end %>
-<br><br>
-
-
-<h4>Total number of orders for each status</h4>
-<ul>
-  <% ordered_amount = Order.where(status: 0).count %>
-  <% paid_amount = Order.where(status: 1).count %>
-  <% cancelled_amount = Order.where(status: 2).count %>
-  <% completed_amount = Order.where(status: 3).count %>
-
-  Ordered: <%= ordered_amount %><br>
-  Paid: <%= paid_amount  %><br>
-  Cancelled: <%= cancelled_amount %><br>
-  Completed: <%= completed_amount %><br>
-</ul>
-<h4>Filter by Status</h4>
-
-<%= link_to "Ordered", {controller: 'dashboard', action: 'index', :status => 0} %>
-
-<%= link_to "Paid", {controller: 'dashboard', action: 'index', :status => 1} %>
-
-<%= link_to "Cancelled", {controller: 'dashboard', action: 'index', :status => 2} %>
-
-<%= link_to "Completed", {controller: 'dashboard', action: 'index', :status => 3} %>
+        <li class="list-group-item">Ordered: <%= ordered_amount %><br></li>
+        <li class="list-group-item">Paid: <%= paid_amount  %><br></li>
+        <li class="list-group-item">Cancelled: <%= cancelled_amount %><br></li>
+        <li class="list-group-item">Completed: <%= completed_amount %><br></li>
+      </ul>
+    </div>
+    <div class="col-md-6 text-center">
+      <h3>Filter by Status</h3>
+      <ul class="list-group">
+        <li class="list-group-item"><%= link_to "Ordered", {controller: 'dashboard', action: 'index', :status => 0} %></li>
+        <li class="list-group-item"><%= link_to "Paid", {controller: 'dashboard', action: 'index', :status => 1} %>
+</li>
+        <li class="list-group-item"><%= link_to "Cancelled", {controller: 'dashboard', action: 'index', :status => 2} %></li>
+        <li class="list-group-item"><%= link_to "Completed", {controller: 'dashboard', action: 'index', :status => 3} %></li>
+      </ul>
+    </div>
+  </div>
+</div>
