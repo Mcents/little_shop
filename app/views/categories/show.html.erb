@@ -24,8 +24,6 @@
                         </div>
                         <div class="col-xs-12 col-md-6">
                             <div><%= button_to "Add Product", shopping_carts_path(product_id: product.id), class: "btn btn-success center-block" %></div>
-                            <% if current_admin? %>
-                            <div><%= button_to "Delete", shopping_carts_path(product_id: product.id), method: :delete %></div><% end %>
                         </div>
                     </div>
                 </div>
