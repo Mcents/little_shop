@@ -344,7 +344,6 @@
         1,
         1,
         null,
-        null,
         1,
         null
       ],
@@ -618,7 +617,6 @@
         1,
         2,
         null,
-        null,
         null
       ],
       "/Users/michaelcentrelli/Desktop/little_shop/app/controllers/brands_controller.rb": [
@@ -771,6 +769,6 @@
         null
       ]
     },
-    "timestamp": 1501711703
+    "timestamp": 1501713869
   }
 }
