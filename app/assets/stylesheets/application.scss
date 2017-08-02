@@ -20,7 +20,6 @@
     margin-top: -50px;
      background-color: #2874f0;
      color: #FFFFFF;
-    //  position: fixed;
      top: 0
  }
 
@@ -389,4 +388,9 @@ ul.thumbnails.image_picker_selector {
 }
 .center-buttons{
   width: 150px;
+}
+.logo-bar {
+  padding-top: 20px !important;
+  margin-left: -50px !important;
+  border-radius: 25px;
 }
