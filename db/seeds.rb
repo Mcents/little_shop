@@ -5,3 +5,22 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faraday'
+
+class Seed
+  def consume_api
+    response = Faraday.get("https://api.bestbuy.com/v1/products((categoryPath.id=abcat0501000))?apiKey=api_key&pageSize=20&format=json")
+    raw_data = response.body
+    @final_data = JSON.parse(raw_data)
+  end
+
+  def create_laptops
+    @final_data["products"].each do |prod|
+      current_product = Product.find_or_create_by!(name: prod["name"], description: prod["shortDescription"], price: prod["regularPrice"], image_path: prod["image"], brand_id: Brand.find_or_create_by!(name: prod["manufacturer"]).id)
+      prod["categoryPath"].each{|cat| current_product.categories << Category.find_or_create_by(name: cat["name"])}
+    end
+  end
+end
+seed = Seed.new
+seed.consume_api
+seed.create_laptops
