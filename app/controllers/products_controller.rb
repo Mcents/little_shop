@@ -11,6 +11,10 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
+def index
+  @products = Product.search(params[:query])
+end
+
   def update
     @product = Product.find(params[:id])
     @product.update(product_params)
@@ -23,16 +27,6 @@ class ProductsController < ApplicationController
     end
   end
 
-  def index
-    @products = Product.all
-  end
-
-  def destroy
-    @product = Product.find(params[:id])
-    @product.destroy
-
-    redirect_to products_path
-  end
 
   private
 
