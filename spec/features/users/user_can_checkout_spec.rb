@@ -56,4 +56,20 @@ RSpec.feature "As a user" do
 
   expect(current_path).to eq("/login")
   end
+
+  scenario "cannot checkout without items" do
+    user_attributes = {
+      username: "usericus",
+      password: "password"
+      }
+    user = User.create(user_attributes)
+    visit login_path
+    fill_in "session[username]", with: user_attributes[:username]
+    fill_in "session[password]", with: user_attributes[:password]
+    page.all(:css, '.login-button-unique')[0].click
+    visit cart_path
+    click_on("Checkout")
+    
+    expect(page).to have_content("There are no items in your cart")
+  end
 end
