@@ -9,7 +9,7 @@ require 'faraday'
 
 class Seed
   def consume_api
-    response = Faraday.get("https://api.bestbuy.com/v1/products((categoryPath.id=abcat0501000))?apiKey=api_key&pageSize=20&format=json")
+    response = Faraday.get("https://api.bestbuy.com/v1/products((categoryPath.id=abcat0501000))?apiKey=ENV["api_key"]&pageSize=20&format=json")
     raw_data = response.body
     @final_data = JSON.parse(raw_data)
   end
